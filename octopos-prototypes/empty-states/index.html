@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Octopos · First-use experiences</title>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Octopos · First-use Experience — 2026 Design Refresh</title>
 <style>
 :root{--ink:#2f2b43;--muted:#7b7594;--brand:#2457d6;--soft:#eef3ff;--line:#e3e1e9;--bg:#f6f6f8;--sidebar:#f7f7fa;--green:#218762;--panel:#fff}*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg);font-size:14px}button,input,select,textarea{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #7fa3ff;outline-offset:2px}button:disabled{opacity:.5;cursor:not-allowed}h1,h2,h3,p{margin:0}.muted{color:var(--muted)}.top{height:60px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 24px;position:sticky;top:0;z-index:20}.logo{font-weight:800;letter-spacing:-1px;font-size:27px;color:#2461ef}.top-actions{display:flex;align-items:center;gap:12px;color:#77728c}.searchtop{border:1px solid var(--line);padding:10px 12px;border-radius:7px;min-width:200px;text-align:left;background:#fff;color:#9792a9}.avatar{width:34px;height:34px;background:#edf3ff;border-radius:50%;display:grid;place-items:center;color:#2654c2;border:1px solid #d1defe;font-weight:700}.shell{display:grid;grid-template-columns:252px minmax(0,1fr);min-height:calc(100vh - 60px)}aside{background:var(--sidebar);padding:18px 15px;border-right:1px solid #eeedf2;display:flex;flex-direction:column}.side-nav{display:grid;gap:3px;overflow-y:auto}.nav-group{display:grid;gap:2px}.nav-parent{width:100%;display:flex;align-items:center;gap:10px;border:0;background:transparent;text-align:left;color:#756e8e;font-weight:650;font-size:14px;border-radius:6px;padding:10px}.nav-parent.current{color:#2557c9;background:#eaf0fc;box-shadow:inset 3px 0 #2457d6}.nav-parent:hover,.nav-child:hover{background:#eceef5}.nav-icon{width:22px;text-align:center;font-size:15px}.chev{margin-left:auto;font-size:11px}.subnav{border-left:1px solid #dcdbe6;margin:0 0 8px 17px;padding-left:10px;display:grid;gap:2px}.subnav[hidden]{display:none}.nav-child{border:0;border-radius:5px;background:transparent;color:#7a7592;text-align:left;padding:8px 9px;font-size:13px;font-weight:550}.nav-child.active{background:#e7edfc;color:#2454c2;font-weight:750}.sidetip{margin-top:auto;border:1px solid #e5dfd3;border-radius:8px;background:linear-gradient(135deg,#fff,#fffbef);padding:13px;display:grid;gap:13px;font-size:12px}.sidetip button{border:0;background:#edf3ff;color:#2457d6;padding:8px 10px;border-radius:5px;text-align:left;font-weight:700;justify-self:start}main{padding:16px;min-width:0}.page{background:#fff;border:1px solid #e2e0e8;border-radius:9px;padding:20px;min-height:calc(100vh - 97px);box-shadow:0 1px 2px #1a15320b}.header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px}.header h1{font-size:22px;font-weight:780}.header p{color:var(--muted);font-size:13px;margin-top:5px}.meta-pill{border:1px solid #e8e7ed;border-radius:99px;background:#fafafd;padding:7px 10px;color:#837d9b;font-size:11px;font-weight:700}.button{display:inline-flex;align-items:center;gap:7px;justify-content:center;min-height:37px;border-radius:6px;padding:8px 13px;border:1px solid #e0dee7;background:#fff;color:#36314b;font-weight:700;font-size:13px}.button:hover{background:#f5f7ff;border-color:#cbd7f6}.button.blue{background:var(--brand);color:white;border-color:#1e4cb6}.button.blue:hover{background:#1847bc}.button.link{border:0;color:var(--brand);background:transparent;padding-left:0}.button.small{min-height:30px;font-size:12px;padding:6px 10px}.value{background:linear-gradient(180deg,#f7f9ff 0%,#fbfcff 55%,#fff 100%);border:1px solid #ebedf5;border-radius:10px;padding:14px;min-height:710px;display:flex;flex-direction:column;gap:23px}.hero{display:flex;flex-direction:column;align-items:center;text-align:center;min-height:444px;justify-content:flex-end;padding:0 10px}.scene{flex:1;min-height:210px;display:grid;place-items:center;width:min(730px,100%);position:relative;overflow:hidden}.scene:before{content:"";position:absolute;inset:5px 60px 4px;background-image:linear-gradient(#e2e9ff88 1px,transparent 1px),linear-gradient(90deg,#e2e9ff88 1px,transparent 1px);background-size:22px 22px;mask-image:radial-gradient(ellipse at center,#000 15%,transparent 77%)}.stamp{position:absolute;right:8px;top:9px;color:#9490a4;font-size:10px;text-transform:uppercase;letter-spacing:.065em;font-weight:750;border:1px solid #e7e8ef;background:white;border-radius:99px;padding:5px 9px;z-index:3}.stage{position:relative;width:590px;height:205px;z-index:1}.demo-card{position:absolute;background:white;border:1px solid #e4e6ee;border-radius:8px;box-shadow:0 7px 23px #20234a15;padding:15px;text-align:left;width:310px}.demo-card.one{left:22px;top:23px}.demo-card.two{right:20px;top:68px;width:255px}.demo-title{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:11px;font-weight:750;font-size:12px}.demo-tag{background:#eff4ff;color:#2453bc;border-radius:4px;padding:4px 6px;font-size:10px}.demo-tag.green{background:#eaf9f0;color:#118755}.demo-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:6px 0;border-top:1px solid #f0f0f4;font-size:11px}.demo-row:first-child{border:0}.demo-row small{color:var(--muted)}.demo-row b{font-weight:760}.demo-wide{font-size:23px;font-weight:800;letter-spacing:-.5px}.demo-bars{display:flex;gap:7px;align-items:flex-end;height:63px;border-bottom:1px solid #e7e9f2;margin-top:11px}.demo-bars i{display:block;flex:1;background:#a4bdfa;border-radius:3px 3px 0 0}.demo-bars i:nth-child(2n){background:#4d7beb}.eyebrow{border-radius:5px;background:#eaf1ff;color:#2354c1;padding:7px 11px;display:inline-block;letter-spacing:.08em;font-weight:800;font-size:11px}.hero h2{font-size:25px;line-height:1.3;font-weight:760;margin:13px 0 5px;letter-spacing:-.45px}.hero>p{font-size:14px;color:#7a7390;max-width:610px;line-height:1.55}.hero-acts{display:flex;align-items:center;justify-content:center;gap:11px;margin-top:13px;flex-wrap:wrap}.small-note{font-size:11px;color:#9994a8;margin:9px 0 0}.bottom-header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px}.bottom-header strong{font-size:14px}.bottom-header small{font-size:11px;color:#9490a2}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.cards.four{grid-template-columns:repeat(4,minmax(0,1fr))}.tile{border:1px solid #e2e0e9;background:#fff;border-radius:8px;padding:16px;min-height:165px;display:flex;flex-direction:column;gap:10px;text-align:left;width:100%;color:var(--ink);transition:box-shadow .14s,border-color .14s}.tile:hover{box-shadow:0 7px 20px #16317310;border-color:#b8cafa}.cards.four .tile{min-height:146px;padding:12px}.tile-icon{width:31px;height:31px;background:#eef3ff;border-radius:6px;display:grid;place-items:center;color:#2455ca;font-weight:750}.tile b{font-size:14px}.tile p{font-size:12px;color:#7c7691;line-height:1.52}.tile-link{color:#2457d6;font-size:12px;font-weight:750;margin-top:auto}.caption{font-size:10px;text-align:center;color:#a29db0;margin-top:12px}.overview-layout{display:grid;gap:17px}.metrics{border:1px solid #e4e1e9;border-radius:9px;display:grid;grid-template-columns:repeat(3,1fr);overflow:hidden}.metric{padding:16px;border-right:1px solid var(--line)}.metric:last-child{border:0}.metric small{display:block;color:#837d9a;font-size:12px;margin-bottom:5px}.metric strong{font-size:22px;line-height:1.25}.actionbar{display:flex;flex-wrap:wrap;gap:10px}.columns{display:grid;grid-template-columns:1fr 1fr;gap:16px}.box{border:1px solid #e4e2eb;border-radius:9px;padding:17px;background:#fff;min-height:270px}.box h3{font-size:14px;margin-bottom:12px}.task{display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid #f1f0f5;padding:12px 0}.task:last-child{border:0}.task b{font-size:13px}.task p{font-size:11px;color:var(--muted);margin-top:3px}.setup-hero{background:linear-gradient(100deg,#f2f6ff,#fff);border:1px solid #e0e8fa;border-radius:9px;padding:16px;display:flex;align-items:center;justify-content:space-between;gap:12px}.setup-hero strong{font-size:16px}.setup-hero p{color:var(--muted);font-size:12px;margin-top:4px}.listhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}.listhead h1{font-size:22px}.tablewrap{border:1px solid var(--line);border-radius:8px;overflow:auto}table{border-collapse:collapse;width:100%}th{background:#f7f7fa;text-align:left;color:#57516b;font-size:12px}td,th{border-bottom:1px solid var(--line);padding:12px}td{font-size:13px}.tag{color:#2457bd;background:#eef3ff;padding:4px 7px;border-radius:4px;font-size:11px}.searchbar{margin:0 0 14px;display:flex;gap:10px}.searchbar input{border:1px solid var(--line);padding:11px 13px;border-radius:6px;width:min(360px,100%)}.no-results{text-align:center;padding:75px 10px;border:1px solid #eee;border-radius:8px;color:var(--muted)}.no-results h3{margin-bottom:8px;color:var(--ink)}.scrim{position:fixed;inset:0;background:#17142472;z-index:60;display:none;align-items:stretch;justify-content:flex-end}.scrim.open{display:flex}.drawer{height:100%;width:min(540px,100vw);background:white;box-shadow:-15px 0 45px #1a16332a;display:flex;flex-direction:column}.drawerhead{padding:22px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:flex-start}.drawerhead h2{font-size:22px}.drawerhead p{font-size:12px;color:var(--muted);margin-top:6px}.drawerbody{padding:20px 22px;overflow:auto;flex:1}.drawerfoot{padding:14px 20px;border-top:1px solid var(--line);display:flex;justify-content:flex-end;gap:10px}.inputrow{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.field{display:grid;gap:7px;margin-bottom:13px}.field.wide{grid-column:1/-1}.field label{color:#514a68;font-size:12px;font-weight:700}.field input,.field select,.field textarea{padding:10px 11px;background:white;border:1px solid #dedce6;border-radius:6px;min-height:41px;color:#343044;width:100%;max-width:100%}.field textarea{min-height:86px}.info{padding:12px 14px;background:#f7f9fe;border:1px solid #e8ecf7;border-radius:7px;color:#716a88;font-size:12px;line-height:1.55;margin:10px 0}.steps{display:flex;gap:7px;flex-wrap:wrap;margin:11px 0 18px}.step{font-size:11px;border:1px solid #dedde8;padding:7px 10px;border-radius:99px;color:#827b96}.step.done{background:#eaf8f1;color:#18754f;border-color:#cbead9}.step.current{background:#edf3ff;color:#2454c1;border-color:#c8d8ff}.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#2e2943;color:white;border-radius:7px;padding:11px 14px;box-shadow:0 8px 25px #211c3844;font-size:12px;font-weight:650;z-index:99;display:none}.toast.on{display:block}.utility{position:fixed;right:18px;bottom:18px;background:#242337;border:1px solid #37354b;border-radius:99px;padding:9px 13px;display:flex;gap:7px;align-items:center;color:white;font-weight:700;z-index:30}.panel{position:fixed;right:18px;bottom:60px;z-index:30;background:white;border:1px solid var(--line);box-shadow:0 12px 40px #29223b25;border-radius:10px;width:288px;padding:15px;display:none}.panel.open{display:grid;gap:11px}.panel p{color:var(--muted);font-size:12px}.panel label{font-size:11px;color:var(--muted)}.panel select{width:100%;border:1px solid var(--line);border-radius:5px;padding:8px}.permgroup{border:1px solid #e6e3ec;border-radius:7px;padding:10px;margin:8px 0;display:grid;gap:9px}.permgroup span{font-size:12px;font-weight:700}.permgroup select{font-size:12px}.flow-path{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.flow-path span{background:#fff;border:1px solid #e7e6ec;padding:13px 8px;border-radius:7px;font-size:12px;text-align:center;font-weight:700}.flow-path small{display:block;font-weight:500;color:var(--muted);margin-top:4px}.guidebox{padding:24px;border:1px solid #e7e7f1;border-radius:8px;text-align:center;background:#fafbfe}.guidebox h3{margin:12px 0}.guidebox p{color:var(--muted);line-height:1.55}.guide-num{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#eaf1ff;color:#2457d6;margin:0 auto;font-weight:800}@media(max-width:1050px){.shell{grid-template-columns:210px 1fr}.cards.four{grid-template-columns:repeat(2,1fr)}.stage{transform:scale(.82)}.cards{grid-template-columns:repeat(2,1fr)}}@media(max-width:780px){.shell{grid-template-columns:1fr}aside{padding:9px 12px}.side-nav{display:flex;gap:7px;overflow-x:auto}.nav-group{display:flex;align-items:center}.nav-parent{white-space:nowrap;border:1px solid #e3e1e9;padding:8px 12px}.nav-icon,.chev,.subnav,.sidetip{display:none!important}main{padding:10px}.page{padding:11px;min-height:calc(100vh - 125px)}.value{padding:10px}.cards,.columns{grid-template-columns:1fr}.metrics{grid-template-columns:1fr}.metric{border-right:0;border-bottom:1px solid var(--line)}.hero{min-height:420px}.stage{transform:scale(.75)}.scene{overflow:hidden}.inputrow{grid-template-columns:1fr}}@media(max-width:460px){.top{padding:0 14px}.searchtop{display:none}.stage{transform:scale(.53)}.cards.four{grid-template-columns:1fr}.hero h2{font-size:22px}.value{gap:16px}.hero>p{font-size:13px}}
 @media(max-width:780px){.shell,.shell>*{min-width:0!important}.shell aside{width:100%;min-width:0;max-width:100vw;overflow:hidden}.shell .side-nav{width:100%;min-width:0;overflow-x:auto;overscroll-behavior-x:contain}.shell main{width:100%;min-width:0}.page{width:100%;min-width:0;overflow:hidden}.setup-hero{flex-direction:column;align-items:flex-start}.setup-hero>div{min-width:0;width:100%}.setup-hero .steps{max-width:100%}.actionbar,.top-actions{max-width:100%}.header{flex-wrap:wrap}.columns>.box{min-width:0}.task{min-width:0}.task>div{min-width:0}}
@@ -54,6 +54,160 @@
 /* Keep both example preview cards visible when the desktop composition scales down. */
 @media(max-width:780px){.scene .stage{position:absolute;left:50%;top:50%;width:590px;transform:translate(-50%,-50%) scale(.74);transform-origin:center}}
 @media(max-width:460px){.scene .stage{transform:translate(-50%,-50%) scale(.52)}}
+
+/* First-use visual refresh — native HTML/CSS, no external assets */
+:root{--brand:#2457d6;--ink:#302c45;--muted:#77718e;--line:#e3e1eb}
+.value{background:linear-gradient(180deg,#f7f9ff 0%,#fbfcff 56%,#fff 90%);padding:17px 18px 14px;min-height:745px;gap:17px}
+.hero{min-height:458px;padding:0 8px;justify-content:initial}
+.hero .scene{flex:0 0 268px;min-height:268px;height:268px;width:min(100%,810px);overflow:hidden}
+.hero .scene:before{inset:8px 15px 0;background-image:linear-gradient(#e8edf977 1px,transparent 1px),linear-gradient(90deg,#e8edf977 1px,transparent 1px);background-size:23px 23px;mask-image:radial-gradient(ellipse at 50% 48%,#000,transparent 69%)}
+.hero .scene:after{content:"";position:absolute;width:550px;height:215px;left:50%;top:40px;transform:translateX(-50%);background:radial-gradient(ellipse,#e8efffc4,transparent 70%);pointer-events:none}
+.stage{width:710px;height:252px;z-index:2}
+.hero h2{margin:12px 0 5px;font-size:25px;max-width:750px;line-height:1.25;letter-spacing:-.55px}
+.hero>p{max-width:560px;font-size:14px;line-height:1.55}
+.hero .eyebrow{font-size:10px;letter-spacing:.08em;padding:6px 10px}
+.hero .small-note{color:#a19bab;font-size:10px}
+.hero-acts{margin-top:12px}
+.bottom{padding:0 2px}
+.bottom-header{margin-bottom:11px}
+.tile{min-height:151px;padding:15px 16px;gap:10px;background:#fff;transition:all .18s ease}
+.tile .tile-icon{width:34px;height:34px;font-size:16px;background:#edf3ff;border-radius:8px}
+.tile b{font-size:14px;letter-spacing:-.15px}
+.tile p{font-size:12px;max-width:310px}
+.tile-link{font-size:11px}
+.cards.four .tile{min-height:145px}
+.value .stepper-row{border:1px solid #e6eaf5;background:#fff;border-radius:11px;padding:13px;box-shadow:0 2px 14px #1b2f6a06;gap:7px}
+.value .stepper-item{background:transparent!important;border:0!important;min-height:114px;padding:8px 9px!important}
+.value .stepper-item:hover{background:#f8faff!important}
+.value .stepper-num{box-shadow:0 1px 5px #2a62b324}
+.value .caption{margin-top:11px;color:#aea9b7}
+.value .bottom .cards{gap:13px}
+/* high fidelity feature examples */
+.vz{position:absolute;inset:0;font-size:12px;color:#343049;line-height:1.4;pointer-events:none}
+.vz *, .vz *:before, .vz *:after{box-sizing:border-box}
+.vz-panel{position:absolute;background:#fff;border:1px solid #e1e6f1;border-radius:13px;box-shadow:0 15px 32px #252b4d17,0 3px 6px #252b4d0a;overflow:hidden}
+.vz-panel strong{color:#2f2b43}
+.vz-pad{padding:15px 17px}
+.vz-meta{font-size:10px;letter-spacing:.04em;text-transform:uppercase;color:#918aa5;font-weight:750}
+.vz-note{font-size:10px;color:#837d94}
+.vz-head{font-size:13px;font-weight:780;color:#322d45;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.vz-small{font-size:11px;color:#7f7a91}
+.vz-chip{display:inline-block;padding:4px 7px;background:#edf3ff;color:#2157c4;border-radius:5px;font-weight:750;font-size:10px;white-space:nowrap}
+.vz-chip.good{background:#e7f7f0;color:#18774e}
+.vz-chip.warn{background:#fff5df;color:#9b6707}
+.vz-chip.bad{background:#fceced;color:#b95355}
+.vz-row{display:flex;gap:12px;align-items:center;justify-content:space-between;border-bottom:1px solid #f0eef4;padding:8px 0;font-size:11px}
+.vz-row:last-child{border:0}
+.vz-row span{color:#6f6a84}
+.vz-row b{color:#2d2b40;font-weight:770}
+.vz-rule{height:1px;background:#edf0f5;margin:10px 0}
+.vz-track{height:8px;background:#eef0f7;border-radius:999px;overflow:hidden}
+.vz-track>i{display:block;background:#2962dc;border-radius:inherit;height:100%}
+.vz-lift{transform:rotate(-5deg)}
+.vz-tilt{transform:rotate(5deg)}
+.vz-big{font-weight:820;font-size:27px;letter-spacing:-.7px;color:#2d3148}
+.vz-inline{display:flex;align-items:center;gap:8px}
+.vz-avatar{height:38px;width:38px;border-radius:50%;background:#eaf0ff;color:#305cc6;display:grid;place-items:center;font-weight:800;font-size:13px;border:2px solid white;box-shadow:0 0 0 1px #dce5f5;flex-shrink:0}
+.vz-avatar.grn{background:#dcf5e9;color:#137e59}.vz-avatar.vio{background:#eee6ff;color:#7560ad}
+.vz-blue{color:#2457d6!important}.vz-green{color:#19825a!important}.vz-muted{color:#8b849d!important}
+.vz-burst{position:absolute;color:#5988ef;font-size:23px;font-weight:800;opacity:.7}
+.vz-card-list{display:grid;gap:10px}
+.vz-mini-card{padding:10px 11px;border-radius:9px;background:#fff;border:1px solid #e6e9f1;box-shadow:0 4px 12px #1a2b4f0b}
+.vz-stackline{height:6px;background:#ecedf4;border-radius:8px;margin:9px 0}
+.vz-stackline.short{width:48%}.vz-stackline.med{width:68%}
+.vz-doc{padding:13px;background:#fff;border:1px solid #e2e6f0;border-radius:9px;box-shadow:0 9px 26px #1f2e4d16}
+.vz-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#2b62df;margin-right:5px}
+.vz-connector{position:absolute;height:2px;background:#c2d3fb;z-index:-1}
+.vz-arrow{font-size:23px;color:#7296ea;position:absolute;font-weight:600}
+.vz-box{display:grid;place-items:center;border:1px solid #e6e8f1;background:#fff;border-radius:8px;color:#2858c1;font-weight:800}
+.vz-svg{width:100%;height:100%}
+.vz-status{display:flex;gap:7px;align-items:center;font-size:10px;color:#827c90}
+.vz-status>i{width:6px;height:6px;border-radius:50%;background:#2cb980}
+.vz-card-title{font-size:13px;font-weight:820;letter-spacing:-.2px}
+.vz-mono{font-variant-numeric:tabular-nums}
+.vz-mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.vz-fade{opacity:.65}
+.vz-scanner{position:absolute;width:90px;height:72px;border:4px solid #c4d8fe;border-radius:12px;display:grid;place-items:center;background:#edf4ff;color:#2a58c4;font-size:24px;box-shadow:0 8px 15px #23448b16}
+.vz-barcode{height:34px;background:repeating-linear-gradient(90deg,#2d3347 0 2px,transparent 2px 5px,#2d3347 5px 7px,transparent 7px 10px,#2d3347 10px 11px,transparent 11px 14px);opacity:.85}
+.vz-product-img{height:52px;width:40px;position:relative;margin:auto;filter:drop-shadow(0 6px 6px #1925411a)}
+.vz-bottle{position:absolute;inset:8px 8px 0;background:linear-gradient(90deg,#ee9d52,#f4c078 50%,#e68d42);border-radius:8px 8px 10px 10px}
+.vz-bottle:before{content:"";position:absolute;top:-9px;left:7px;width:10px;height:11px;background:#dd5c33;border-radius:3px 3px 0 0}
+.vz-bottle:after{content:"";position:absolute;top:17px;left:0;right:0;height:13px;background:#f6e6d8aa;border-top:1px solid #f9f1e4;border-bottom:1px solid #f9f1e4}
+.vz-ice{height:80px;width:52px;border:1px solid #d7e2f9;background:linear-gradient(125deg,#b9ddf6,#8f6f56 50%,#efe5d4);border-radius:12px 12px 16px 16px;position:relative;filter:drop-shadow(0 7px 6px #25325118)}
+.vz-ice:before{content:"";position:absolute;width:31px;height:10px;background:#f8f0ea;top:-7px;left:9px;border-radius:50%;box-shadow:0 -5px 0 #e9cfc1}
+.vz-ice:after{content:"";position:absolute;width:5px;height:29px;background:#7a62bf;top:-30px;left:34px;transform:rotate(14deg);border-radius:3px}
+.vz-folder{position:absolute;width:146px;height:121px;border:1px solid #d7e4f9;border-radius:12px;background:linear-gradient(140deg,#fff,#f1f5ff);box-shadow:0 10px 23px #29406e19;padding:14px;display:flex;flex-direction:column;justify-content:space-between;align-items:center}
+.vz-folder:before{content:"";position:absolute;width:67px;height:13px;top:-8px;left:15px;background:inherit;border:1px solid #d7e4f9;border-bottom:none;border-radius:7px 8px 0 0}
+.vz-folder.purple{background:linear-gradient(140deg,#fff,#f1eafe);border-color:#dcd1f2}.vz-folder.green{background:linear-gradient(140deg,#fff,#eaf8f2);border-color:#ceeede}
+.vz-folder-icon{height:64px;display:flex;align-items:center;gap:8px;font-size:32px;color:#3161d1}
+.vz-folder strong{font-size:13px}
+.vz-product-thumb{height:28px;width:20px;border-radius:5px;background:linear-gradient(145deg,#e5a44f,#f7d289)}
+.vz-product-thumb.blue{background:linear-gradient(145deg,#468bd0,#a0dbff)}.vz-product-thumb.green{background:linear-gradient(145deg,#55ba86,#a8ebbd)}.vz-product-thumb.purple{background:linear-gradient(145deg,#9578d9,#d6bbff)}
+.vz-perm{display:grid;gap:6px}
+.vz-perm div{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:10px}
+.vz-perm i{color:#2270cc;font-style:normal;font-weight:800}
+.vz-week{display:grid;grid-template-columns:75px repeat(5,1fr);gap:3px;align-items:stretch}
+.vz-week>*{font-size:9px;text-align:center;padding:7px 3px;border-radius:4px;background:#f5f6fa;color:#736f83}
+.vz-week b{text-align:left;background:none}
+.vz-week .vz-shift{background:#e9efff;color:#235aca;font-weight:750}
+.vz-week .vz-off{background:#f8f8fa;color:#a8a3b6}
+.vz-receipt{width:235px;padding:14px;background:white;border-radius:10px;border:1px solid #e4e5ed;box-shadow:0 10px 28px #22284218}
+.vz-price-old{text-decoration:line-through;color:#9b96a6;font-size:12px}
+.vz-highlight{background:#edf3ff;border:1px solid #dbe6ff;border-radius:8px;padding:8px 10px}
+.vz-check{display:inline-grid;place-items:center;width:23px;height:23px;border-radius:50%;color:white;background:#27a878;font-weight:900}
+.vz-gift{background:linear-gradient(135deg,#2957d0,#7d74e9);color:#fff!important;border:0!important}
+.vz-gift .vz-big,.vz-gift strong{color:#fff!important}
+.vz-phone{border-radius:23px;border:5px solid #282b43;background:#fff;padding:12px 11px 16px;width:210px;height:234px;box-shadow:0 12px 30px #1e213f25}
+.vz-bubble{background:#e8f0ff;border:1px solid #d7e5ff;border-radius:12px 12px 4px 12px;padding:11px;font-size:11px;line-height:1.55;color:#284d8e}
+.vz-softblue{background:#f0f5ff}.vz-softvio{background:#f6f1ff}.vz-softmint{background:#f0fbf6}
+.vz-connector-arrow{height:2px;width:48px;position:absolute;background:#bad0fb}
+.vz-connector-arrow:after{content:"";position:absolute;right:-3px;top:-4px;width:7px;height:7px;transform:rotate(45deg);border-top:2px solid #8babeb;border-right:2px solid #8babeb}
+.vz-file{height:120px;width:90px;display:grid;place-items:center;border:1px solid #dce5f4;border-radius:8px;background:linear-gradient(130deg,#fff,#f6f8ff);box-shadow:0 6px 14px #1b274015;color:#5b7ecc;font-weight:800}
+.vz-list{display:grid;gap:4px}.vz-list>div{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:7px 8px;background:#f8f9fc;border-radius:6px;font-size:10px}
+.vz-balance{height:12px;border:1px solid #dee6f7;background:#edf2fc;border-radius:10px;overflow:hidden}.vz-balance i{display:block;width:64%;height:100%;background:#477ee5}
+/* More restrained bottom content for simple features */
+.benefits-cards .tile{min-height:145px}
+.benefits-cards .tile-link{color:#928ca1;font-weight:600}
+.choice-cards .tile-link{color:#2358c8}
+.stepper-shortcuts{margin-top:10px!important}
+@media(max-width:980px){.stage{transform:scale(.79);transform-origin:center}.hero .scene{min-height:230px;flex-basis:230px;height:230px}.value{min-height:0}.cards.four{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.hero .scene{height:204px;min-height:204px;flex-basis:204px;overflow:hidden}.stage{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(.48);transform-origin:center}.hero{min-height:365px}.hero h2{font-size:22px}.cards,.cards.four{grid-template-columns:1fr}.value{padding:10px}.tile{min-height:120px}}
+/* Three-step workflow, only where a sequence genuinely helps */
+.journey{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;padding:9px 9px 5px}
+.journey:before{content:"";height:2px;background:#dce3f3;position:absolute;top:25px;left:16%;right:16%}
+.journey-step{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;padding:0 8px 8px;border:0;background:transparent;color:var(--ink);min-height:115px;cursor:pointer;border-radius:8px}
+.journey-step:hover{background:#f4f7ff}
+.journey-step .num{width:35px;height:35px;border-radius:50%;display:grid;place-items:center;background:#f3f4f9;border:2px solid #fff;box-shadow:0 0 0 1px #dfe4f0;color:#615b79;font-weight:800;z-index:1;font-size:12px}
+.journey-step:first-child .num,.journey-step.done .num{background:#2457d6;color:#fff;box-shadow:0 0 0 1px #d5e3ff}
+.journey-step strong{font-size:13px;font-weight:780;line-height:1.3}
+.journey-step p{font-size:12px;color:#7d7793;line-height:1.48;max-width:220px}
+.journey-step em{font-size:10px;color:#2457d6;font-weight:750;font-style:normal;margin-top:auto}
+.overview-intro{background:linear-gradient(110deg,#f6f9ff,#fff);border:1px solid #e7ebf5;border-radius:12px;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);align-items:center;gap:16px;padding:20px;overflow:hidden}
+.overview-intro .intro-copy h2{font-size:23px;letter-spacing:-.4px;margin:10px 0 7px;max-width:490px}
+.overview-intro .intro-copy p{color:var(--muted);font-size:13px;line-height:1.6;max-width:500px}
+.overview-intro .intro-copy .button{margin-top:17px}
+.overview-intro .intro-copy .meta-row{display:flex;gap:8px;margin-top:17px;align-items:center;color:#867f9c;font-size:11px}
+.overview-intro .intro-copy .meta-row i{height:7px;width:7px;border-radius:50%;background:#3b87dc}
+.overview-intro .intro-viz{height:251px;position:relative;overflow:hidden}
+.overview-intro .intro-viz .scene{width:710px;height:252px;min-height:252px;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) scale(.67);transform-origin:center;overflow:visible}
+.overview-intro .intro-viz .scene:before{display:none}
+.overview-intro .intro-viz .stage{transform:none}
+.overview-intro .intro-viz .stamp{top:-22px}
+.overview-steps{margin-top:20px;background:#fff;border:1px solid #e7e5ee;border-radius:12px;padding:17px}
+.overview-steps h3{margin-bottom:13px;font-size:14px}
+.overview-status{display:flex;gap:10px;align-items:center;justify-content:space-between;margin-top:14px;color:#716a83;font-size:12px}
+.overview-status b{color:#2457d6}
+.overview-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin-top:16px}
+.overview-options button{background:#fff;border:1px solid #e4e3ee;border-radius:10px;text-align:left;padding:14px;display:grid;gap:9px;min-height:142px;color:var(--ink)}
+.overview-options button:hover{border-color:#b6c8f9;box-shadow:0 5px 17px #243b720c}
+.overview-options button strong{font-size:13px}
+.overview-options button p{font-size:12px;color:#807b92;line-height:1.5}
+.overview-options button em{font-style:normal;color:#2457d6;font-weight:750;font-size:11px;margin-top:auto}
+.overview-options h3{grid-column:1/-1;font-size:14px;margin:3px 0 0}
+.overview-foot{font-size:11px;text-align:center;color:#a19aad;margin-top:17px}
+@media(max-width:1100px){.overview-intro{grid-template-columns:1fr}.overview-intro .intro-viz{height:196px}.overview-options{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.journey{gap:6px}.journey-step{padding:0 3px 6px}.journey-step strong{font-size:11px}.journey-step p{font-size:10px}.journey-step em{display:none}.journey:before{left:10%;right:10%}.overview-options{grid-template-columns:1fr}.overview-intro .intro-viz{height:150px}.overview-intro .intro-viz .scene{transform:translate(-50%,-50%) scale(.5)}.overview-intro{padding:16px}}
+
 </style></head>
 <body><header class="top"><div class="logo">octopos</div><div class="top-actions"><button class="searchtop" data-action="jump">⌕ &nbsp; Search &nbsp;&nbsp; ⌘ K</button><span>or</span><span style="border:1px solid var(--line);padding:9px;border-radius:5px">▥</span><div class="avatar">A</div></div></header><div class="shell"><aside><nav class="side-nav" id="nav"></nav><div class="sidetip"><b>Try POS on your desktop</b><button data-action="start" data-target="posorders">Try now →</button></div></aside><main><div class="page" id="view"><div class="header"><div><h1>Octopos setup</h1><p>Opening your first-use experience…</p></div></div></div></main></div><button class="utility" data-action="panel">⚙ &nbsp; Prototype controls</button><div class="panel" id="panel"><b>Prototype controls</b><p>Compare first-use education, sample records, and empty search results.</p><label for="mode">Page state</label><select id="mode"><option value="auto">Automatic · New store</option><option value="sample">Sample records</option><option value="noresults">No search results</option></select><button class="button" data-action="seed">Add sample setup</button><button class="button" data-action="reset">Reset new store</button></div><div class="scrim" id="scrim"><div class="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle"><div class="drawerhead"><div><h2 id="drawerTitle"></h2><p id="drawerSub"></p></div><button class="button" data-action="close" aria-label="Close">✕</button></div><div class="drawerbody" id="drawerBody"></div><div class="drawerfoot" id="drawerFoot"></div></div></div><div class="toast" id="toast" role="status"></div>
 <script>
@@ -94,7 +248,374 @@ add('campaigns','Customer Engagement','templates','Reach customers with useful u
 add('reports','Reports','overview','Turn sales into useful insights','See revenue trends, best sellers, and busy periods after sales begin.','KNOW YOUR BUSINESS','Make your first sale',[card('Sales trends','Track change over time.','posorders','route'),card('Product performance','See what sells most.','products','route'),card('Busy periods','Know when the store is busiest.','reports')],{flow:['products','posorders','reports']});
 add('hardware','Hardware','methods','Get checkout ready','Choose your POS platform and connect the hardware you need.','POS SETUP','Set up POS',[card('Android terminal','Use a compatible POS device.','hardware','create','Android'),card('Windows computer','Run POS on your desktop.','hardware','create','Windows'),card('Connect peripherals','Add a scanner and receipt printer.','hardware','learn')]);
 const FLOW_COPY={"mainDashboard":{"heading":"How your dashboard comes to life","steps":[{"title":"Add products","desc":"Set up a catalog that is ready for checkout.","target":"products"},{"title":"Make your first sale","desc":"Complete a checkout using POS.","target":"posorders"},{"title":"See your insights","desc":"Track sales, popular items, and busy hours.","target":"reports"}]},"hrOverview":{"heading":"Set up your team in three steps","steps":[{"title":"Create roles","desc":"Choose what each team member can access.","target":"roles"},{"title":"Add employees","desc":"Assign saved roles to your staff.","target":"employees"},{"title":"Plan schedules","desc":"Set shifts and track worked hours.","target":"schedules"}]},"employees":{"heading":"Bring your team into Octopos","steps":[{"title":"Create a role","desc":"Set and review staff permissions.","target":"roles"},{"title":"Add an employee","desc":"Save their details and assign the role.","target":"employees"},{"title":"Plan a shift","desc":"Set working hours when your team is ready.","target":"schedules"}]},"roles":{"heading":"How roles work","steps":[{"title":"Create a role","desc":"Name the responsibility, such as Cashier.","target":"roles"},{"title":"Set permissions","desc":"Choose what the role can view or change.","target":"roles"},{"title":"Assign to employees","desc":"Use the saved role when adding your team.","target":"employees"}]},"schedules":{"heading":"How employee scheduling works","steps":[{"title":"Add your team","desc":"Make sure employees have saved roles.","target":"employees"},{"title":"Enable Shift Tracking","desc":"Turn on scheduling for the location.","target":"schedules"},{"title":"Create schedules","desc":"Plan shifts and manage working hours.","target":"schedules"}]},"productsOverview":{"heading":"Set up your product catalog","steps":[{"title":"Set up taxes","desc":"Choose tax rules for the products you sell.","target":"taxes"},{"title":"Create departments","desc":"Organize your products into categories.","target":"departments"},{"title":"Add products","desc":"Scan, create manually, or import a sheet.","target":"products"}]},"products":{"heading":"How product creation works","steps":[{"title":"Set up basics","desc":"Configure taxes and departments first.","target":"taxes"},{"title":"Choose a method","desc":"Scan a barcode, create manually, or import.","target":"products"},{"title":"Review and save","desc":"Check product details before publishing.","target":"products"}]},"pricebooks":{"heading":"How customer pricing works","steps":[{"title":"Create a price book","desc":"Set special prices for selected products.","target":"pricebooks"},{"title":"Assign to customers","desc":"Choose who receives those prices.","target":"customers"},{"title":"Apply at checkout","desc":"Prices apply when that customer is selected.","target":"posorders"}]},"departments":{"heading":"How departments work","steps":[{"title":"Create a department","desc":"Name a category your team recognizes.","target":"departments"},{"title":"Assign products","desc":"Organize relevant items under it.","target":"products"},{"title":"Manage together","desc":"Find and manage products by department.","target":"products"}]},"tags":{"heading":"How tags work","steps":[{"title":"Create a tag","desc":"Give your product group a useful name.","target":"tags"},{"title":"Choose display options","desc":"Set where the tag should appear.","target":"tags"},{"title":"Tag your products","desc":"Keep related items easy to find.","target":"products"}]},"brands":{"heading":"How brands work","steps":[{"title":"Add a brand","desc":"Save the brand name once.","target":"brands"},{"title":"Assign products","desc":"Link the right items to the brand.","target":"products"},{"title":"Browse by brand","desc":"Find and manage branded items together.","target":"brands"}]},"modifiers":{"heading":"How modifier sets work","steps":[{"title":"Create a modifier set","desc":"Add options like sizes or toppings.","target":"modifiers"},{"title":"Set selection rules","desc":"Allow one selection or several.","target":"modifiers"},{"title":"Assign to products","desc":"Show the options during checkout.","target":"products"}]},"promotions":{"heading":"How promotions work","steps":[{"title":"Choose a promotion type","desc":"Pick one of four product-based offers.","target":"promotions"},{"title":"Choose products and dates","desc":"Set eligible items and the offer period.","target":"promotions"},{"title":"Apply at checkout","desc":"Discounts apply to eligible items automatically.","target":"posorders"}]},"salesOverview":{"heading":"Start tracking your sales","steps":[{"title":"Add products","desc":"Get items ready to sell from POS.","target":"products"},{"title":"Make your first sale","desc":"Complete checkout and capture a transaction.","target":"posorders"},{"title":"Manage what is owed","desc":"Use quotes and invoices for customer orders.","target":"invoices"}]},"posorders":{"heading":"How POS orders appear","steps":[{"title":"Add items","desc":"Scan or select products at checkout.","target":"products"},{"title":"Take payment","desc":"Complete the sale at the register.","target":"posorders"},{"title":"View the order","desc":"Find items and payment details here.","target":"posorders"}]},"quotes":{"heading":"How quotes become invoices","steps":[{"title":"Create a quote","desc":"Add products, quantities, and prices.","target":"quotes"},{"title":"Share with customers","desc":"Send the quote for review.","target":"quotes"},{"title":"Convert to invoice","desc":"Carry the approved details into billing.","target":"invoices"}]},"invoices":{"heading":"How invoicing works","steps":[{"title":"Create an invoice","desc":"Add the customer and amount due.","target":"invoices"},{"title":"Send the invoice","desc":"Share the bill with your customer.","target":"invoices"},{"title":"Track payments","desc":"See what is paid and still outstanding.","target":"invoicePayments"}]},"invoicePayments":{"heading":"How invoice payments work","steps":[{"title":"Select an invoice","desc":"Choose the invoice being paid.","target":"invoices"},{"title":"Record the payment","desc":"Enter the amount and payment method.","target":"invoicePayments"},{"title":"Update the balance","desc":"Track what is paid and still due.","target":"invoicePayments"}]},"purchasingOverview":{"heading":"How purchasing works","steps":[{"title":"Add a vendor","desc":"Save your supplier before placing orders.","target":"vendors"},{"title":"Order stock","desc":"Create a PO for products and quantities.","target":"purchaseOrders"},{"title":"Receive and settle","desc":"Check deliveries, then manage bills and payments.","target":"purchaseReceipts"}]},"vendors":{"heading":"How vendors support purchasing","steps":[{"title":"Add a vendor","desc":"Save your supplier’s details once.","target":"vendors"},{"title":"Create orders","desc":"Use the vendor when ordering products.","target":"purchaseOrders"},{"title":"Track purchases","desc":"See related receipts, bills, and payments.","target":"purchaseBills"}]},"purchaseOrders":{"heading":"How purchase orders work","steps":[{"title":"Choose a vendor","desc":"Select the supplier you are ordering from.","target":"vendors"},{"title":"Add products","desc":"Enter quantities and expected costs.","target":"purchaseOrders"},{"title":"Receive delivery","desc":"Track items as they arrive.","target":"purchaseReceipts"}]},"purchaseReceipts":{"heading":"How purchase receipts work","steps":[{"title":"Choose a source","desc":"Start from a PO or enter a receipt manually.","target":"purchaseReceipts"},{"title":"Record quantities","desc":"Enter what was actually delivered.","target":"purchaseReceipts"},{"title":"Update inventory","desc":"Confirm receipt to update stock.","target":"purchaseReceipts"}]},"purchaseBills":{"heading":"How purchase bills work","steps":[{"title":"Choose a source","desc":"Start from a receipt or create manually.","target":"purchaseBills"},{"title":"Enter bill details","desc":"Add charges, amounts, and due dates.","target":"purchaseBills"},{"title":"Track payment","desc":"See what was paid and what you owe.","target":"payments"}]},"payments":{"heading":"How vendor payments work","steps":[{"title":"Select a bill","desc":"Choose an outstanding vendor bill.","target":"purchaseBills"},{"title":"Record payment","desc":"Enter the amount and payment method.","target":"payments"},{"title":"Track the balance","desc":"See what has been paid and remains.","target":"payments"}]},"transfers":{"heading":"How transfer orders work","steps":[{"title":"Choose locations","desc":"Select the sending and receiving stores.","target":"locations"},{"title":"Add products","desc":"Enter items and transfer quantities.","target":"transfers"},{"title":"Receive stock","desc":"Confirm what arrived at the destination.","target":"transfers"}]},"engagementOverview":{"heading":"Build lasting customer relationships","steps":[{"title":"Save customers","desc":"Build a useful customer list.","target":"customers"},{"title":"Offer rewards","desc":"Create a reason for shoppers to return.","target":"rewards"},{"title":"Stay in touch","desc":"Send relevant campaigns when ready.","target":"campaigns"}]},"customers":{"heading":"How customer profiles help","steps":[{"title":"Save a customer","desc":"Add the customer’s contact details.","target":"customers"},{"title":"Find at checkout","desc":"Select the customer during a sale.","target":"posorders"},{"title":"Use other features","desc":"Connect rewards, invoices, or credit.","target":"rewards"}]},"rewards":{"heading":"How rewards work","steps":[{"title":"Choose earning rules","desc":"Reward spending, visits, or products.","target":"rewards"},{"title":"Set rewards","desc":"Decide what customers can redeem.","target":"rewards"},{"title":"Reward at checkout","desc":"Customers earn and use points at POS.","target":"posorders"}]},"giftCards":{"heading":"How gift cards work","steps":[{"title":"Set up gift cards","desc":"Enable gift cards for the store.","target":"giftCards"},{"title":"Sell at checkout","desc":"Issue cards with a starting balance.","target":"posorders"},{"title":"Redeem and track","desc":"Apply payments and update balances.","target":"giftCards"}]},"segments":{"heading":"How customer segments work","steps":[{"title":"Choose a group type","desc":"Start with smart, custom, or manual.","target":"segments"},{"title":"Define your audience","desc":"Set rules or select customers.","target":"segments"},{"title":"Use in campaigns","desc":"Reach the shoppers in that group.","target":"campaigns"}]},"campaigns":{"heading":"How campaigns work","steps":[{"title":"Create a message","desc":"Write a store update or offer.","target":"campaigns"},{"title":"Choose an audience","desc":"Select who should receive it.","target":"segments"},{"title":"Send or schedule","desc":"Deliver your message at the right time.","target":"campaigns"}]},"reports":{"heading":"How reports become useful","steps":[{"title":"Start selling","desc":"Collect sales data at checkout.","target":"posorders"},{"title":"Choose a report","desc":"Explore sales or product performance.","target":"reports"},{"title":"Filter your results","desc":"Review trends by date and location.","target":"reports"}]},"hardware":{"heading":"How POS hardware setup works","steps":[{"title":"Choose your device","desc":"Use a supported Android or Windows POS.","target":"hardware"},{"title":"Install POS","desc":"Download the app and sign in.","target":"hardware"},{"title":"Connect peripherals","desc":"Set up printers, scanners, and drawers.","target":"hardware"}]}};
-const STEPPER_PAGES=new Set(['pricebooks','schedules','posorders','quotes','invoices','invoicePayments','purchaseOrders','purchaseReceipts','purchaseBills','payments','transfers','giftCards']);
+// Page-specific content and interaction strategies. This overlays the original prototype data.
+const UPDATES = {
+  mainDashboard:{title:'Know how your store is doing',desc:'Sales, best sellers, and busy hours will appear after your first checkout.',eyebrow:'YOUR STORE AT A GLANCE'},
+  hrOverview:{title:'Get your team ready for day one',desc:'Set permissions, add your staff, then plan their first shifts.',eyebrow:'TEAM SETUP'},
+  employees:{title:'Bring your team into Octopos',desc:'Keep everyone’s details, roles, and work access in one place.',eyebrow:'YOUR TEAM'},
+  roles:{title:'Give everyone the right access',desc:'Start with a role, then review what each person can see or change.',eyebrow:'TEAM PERMISSIONS'},
+  schedules:{title:'Plan the week, not the paperwork',desc:'Assign shifts, manage closures, and review hours worked.',eyebrow:'STAFF SCHEDULING'},
+  productsOverview:{title:'Build your catalog, then see what sells',desc:'Set up taxes and departments before adding products.',eyebrow:'CATALOG SETUP'},
+  products:{title:'Build your catalog your way',desc:'Scan a barcode, enter a product, or import a spreadsheet.',eyebrow:'YOUR PRODUCTS'},
+  pricebooks:{title:'The right price for every customer',desc:'Offer special prices without changing your everyday shelf price.',eyebrow:'CUSTOMER PRICING'},
+  departments:{title:'Make every product easy to find',desc:'Group items into departments your staff already recognizes.',eyebrow:'PRODUCT DEPARTMENTS'},
+  tags:{title:'Give products useful labels',desc:'Group items for easier browsing at the POS and online.',eyebrow:'PRODUCT TAGS'},
+  brands:{title:'Keep your brands organized',desc:'Find related products together and browse your catalog by brand.',eyebrow:'YOUR BRANDS'},
+  modifiers:{title:'Let shoppers make it their own',desc:'Offer sizes, toppings, and extras right at checkout.',eyebrow:'PRODUCT OPTIONS'},
+  promotions:{title:'Make every offer effortless',desc:'Set a product deal once. Eligible discounts apply automatically at checkout.',eyebrow:'SELL MORE WITH OFFERS'},
+  salesOverview:{title:'Know what sold and what is still due',desc:'See register orders, quotes, invoices, and outstanding payments.',eyebrow:'SALES WORKSPACE'},
+  posorders:{title:'Every checkout, easy to find',desc:'Look up what sold, how it was paid, and each order’s status.',eyebrow:'REGISTER SALES'},
+  quotes:{title:'Turn an estimate into a sale',desc:'Share prices with customers before they commit to buying.',eyebrow:'CUSTOMER QUOTES'},
+  invoices:{title:'Send invoices. Stay on top of payments.',desc:'Keep amounts, due dates, and payments together.',eyebrow:'CUSTOMER INVOICES'},
+  invoicePayments:{title:'Know which invoices are paid',desc:'Record customer payments and track remaining balances.',eyebrow:'INVOICE PAYMENTS'},
+  purchasingOverview:{title:'From placing an order to paying the bill',desc:'Manage suppliers, stock deliveries, and what you owe in one place.',eyebrow:'PURCHASING WORKSPACE'},
+  vendors:{title:'One home for every supplier',desc:'Keep contact details and purchasing history connected.',eyebrow:'YOUR SUPPLIERS'},
+  purchaseOrders:{title:'Order stock without the clipboard',desc:'Send clear orders and track what arrives from your vendors.',eyebrow:'ORDER NEW STOCK'},
+  purchaseReceipts:{title:'Know exactly what arrived',desc:'Record deliveries, spot shortages, and keep stock accurate.',eyebrow:'RECEIVE STOCK'},
+  purchaseBills:{title:'Never lose track of a vendor bill',desc:'Record invoices and keep every outstanding amount visible.',eyebrow:'BILLS & EXPENSES'},
+  payments:{title:'Know what you’ve paid your vendors',desc:'Record payments against bills and see what remains due.',eyebrow:'VENDOR PAYMENTS'},
+  transfers:{title:'Move stock between stores with confidence',desc:'Track items leaving one location and arriving at another.',eyebrow:'STOCK TRANSFERS'},
+  engagementOverview:{title:'Turn more shoppers into regulars',desc:'Start with customer profiles, then add rewards and meaningful outreach.',eyebrow:'CUSTOMER ENGAGEMENT'},
+  customers:{title:'Keep every regular within reach',desc:'Find shoppers at checkout and see their purchases, rewards, and credit.',eyebrow:'YOUR CUSTOMERS'},
+  rewards:{title:'Give customers a reason to return',desc:'Create a rewards program that fits how your store sells.',eyebrow:'CUSTOMER REWARDS'},
+  giftCards:{title:'Make gifting part of your checkout',desc:'Sell gift cards, accept redemptions, and track balances.',eyebrow:'GIFT CARDS'},
+  segments:{title:'Reach the customers who matter',desc:'Group shoppers by spending, visits, or your own selections.',eyebrow:'CUSTOMER AUDIENCES'},
+  campaigns:{title:'Reach customers with something worth opening',desc:'Send store updates and offers to the right shoppers.',eyebrow:'CUSTOMER CAMPAIGNS'},
+  reports:{title:'See the story behind your sales',desc:'Compare sales, products, and busy periods once transactions begin.',eyebrow:'STORE REPORTS'},
+  hardware:{title:'Get your checkout ready to go',desc:'Choose your POS platform, then connect the devices your store uses.',eyebrow:'POS HARDWARE'}
+};
+for (const [id, changes] of Object.entries(UPDATES)) Object.assign(C[id],changes);
+const use = (title,desc,target,kind='learn',preset='') => card(title,desc,target,kind,preset);
+// Benefits = outcomes, Templates = independent choices, Paths = alternate entry points.
+Object.assign(C.roles,{kind:'templates',cards:[
+ use('Cashier','Checkout, payments, and daily sales.','role','preset','Cashier'),
+ use('Store manager','Store operations, staff, and approvals.','role','preset','Store manager'),
+ use('Stockroom staff','Products, stock, and receiving.','role','preset','Stockroom staff')
+]});
+Object.assign(C.employees,{kind:'templates',cards:[
+ use('Cashier','Add someone who works at checkout.','employee','preset','Cashier'),
+ use('Store manager','Add a team lead with the right access.','employee','preset','Store manager'),
+ use('Stockroom staff','Add someone who handles inventory.','employee','preset','Stockroom staff')
+]});
+Object.assign(C.departments,{kind:'benefits',cards:[
+ use('Find products faster','Help cashiers browse a familiar catalog.','departments'),
+ use('Keep settings together','Apply relevant rules to product groups.','departments'),
+ use('Compare departments','Understand what each category sells.','departments')
+]});
+Object.assign(C.brands,{kind:'benefits',cards:[
+ use('Group related products','Keep items from the same brand together.','brands'),
+ use('Find products faster','Filter a large catalog by brand.','brands'),
+ use('See your brand mix','Understand which brands sell most.','brands')
+]});
+Object.assign(C.tags,{kind:'usecases',cards:[
+ use('Featured products','Give popular items a helpful label.','tags','create','Featured'),
+ use('Seasonal items','Group products available for a season.','tags','create','Seasonal'),
+ use('Online favorites','Organize items for online shopping.','tags','create','Online favorites')
+]});
+Object.assign(C.modifiers,{kind:'templates',cards:[
+ use('Sizes','Small, medium, and large.','modifiers','create','Size'),
+ use('Add-ons','Extra cheese, toppings, or syrup.','modifiers','create','Add-ons'),
+ use('Spice levels','Mild, medium, or hot.','modifiers','create','Spice')
+]});
+Object.assign(C.promotions,{kind:'templates',cards:[
+ use('Buy X, Get 1 Free','Buy two bottles, get the third free.','promotions','create','Buy X, Get 1 Free'),
+ use('Buy X, Get a Discount','Save on an additional eligible item.','promotions','create','Buy X, Get a Discount'),
+ use('Tiered Pricing','Make the unit price better in quantity.','promotions','create','Tiered Pricing'),
+ use('Discounted Price','Give selected items a special price.','promotions','create','Discounted Price')
+]});
+Object.assign(C.posorders,{kind:'benefits',cards:[
+ use('Find any transaction','Look up items, totals, and cashier details.','posorders'),
+ use('Check payment status','See how the order was paid.','posorders'),
+ use('Review each sale','Open the order when questions come up.','posorders')
+]});
+Object.assign(C.vendors,{kind:'benefits',cards:[
+ use('Store contact details','Keep phone numbers and contacts handy.','vendors'),
+ use('Connect purchases','Use the same supplier on orders and receipts.','vendors'),
+ use('Track what you owe','See linked bills and their balances.','vendors')
+]});
+Object.assign(C.purchaseReceipts,{kind:'paths',cards:[
+ use('Receive from a PO','Check what arrived against an order.','purchaseReceipts','create','From PO'),
+ use('Record manually','Log deliveries that had no PO.','purchaseReceipts','create','Manual'),
+ use('Spot short shipments','Compare received and ordered quantities.','purchaseReceipts')
+]});
+Object.assign(C.purchaseBills,{kind:'paths',cards:[
+ use('Create from a receipt','Turn received stock into a bill.','purchaseBills','create','From receipt'),
+ use('Enter a vendor bill','Record a bill without a receipt.','purchaseBills','create','Manual'),
+ use('Review what is due','Keep bill balances and due dates clear.','payments','route')
+]});
+Object.assign(C.customers,{kind:'benefits',cards:[
+ use('Recognize regulars','Find profiles quickly at the register.','customers'),
+ use('Connect rewards','Keep points and purchases tied to one shopper.','customers'),
+ use('See credit balances','Know what a customer still owes.','customers')
+]});
+Object.assign(C.rewards,{kind:'templates',cards:[
+ use('By spending','Award points based on purchase value.','rewards','create','Spend'),
+ use('By visits','Reward qualifying visits.','rewards','create','Visits'),
+ use('By products','Award points on selected items.','rewards','create','Products')
+]});
+Object.assign(C.giftCards,{kind:'benefits',cards:[
+ use('Sell at checkout','Issue a gift card with a starting balance.','giftCards'),
+ use('Redeem over time','Apply only the amount a shopper needs.','giftCards'),
+ use('See what remains','Keep the balance available for next time.','giftCards')
+]});
+Object.assign(C.segments,{kind:'templates',cards:[
+ use('Top spenders','Group your most valuable customers.','segments','create','Top spenders'),
+ use('Haven’t returned','Find shoppers with no recent visit.','segments','create','At risk'),
+ use('My customer list','Choose an audience yourself.','segments','create','Manual')
+]});
+Object.assign(C.campaigns,{kind:'templates',cards:[
+ use('Store announcement','Share opening hours or store news.','campaigns','create','Update'),
+ use('Promote an offer','Tell shoppers about an active deal.','campaigns','create','Offer'),
+ use('Welcome message','Greet customers after they join.','campaigns','create','Welcome')
+]});
+Object.assign(C.reports,{kind:'insights',cards:[
+ use('Sales by day','Understand how revenue changes.','reports'),
+ use('Best-selling products','Know which items deserve shelf space.','reports'),
+ use('Busiest hours','See when your register is busiest.','reports')
+]});
+Object.assign(C.pricebooks,{kind:'workflow'});
+Object.assign(C.schedules,{kind:'workflow'});
+Object.assign(C.quotes,{kind:'workflow'});
+Object.assign(C.invoices,{kind:'workflow'});
+Object.assign(C.invoicePayments,{kind:'workflow'});
+Object.assign(C.purchaseOrders,{kind:'workflow'});
+Object.assign(C.payments,{kind:'workflow'});
+Object.assign(C.transfers,{kind:'workflow'});
+Object.assign(C.hardware,{kind:'methods',cards:[
+ use('Android POS','Set up a compatible Android terminal.','hardware','create','Android'),
+ use('Windows POS','Run POS on a Windows computer.','hardware','create','Windows'),
+ use('Connect devices','Add your printer, scanner, or cash drawer.','hardware')
+]});
+Object.assign(C.products,{kind:'methods',cards:[
+ use('Scan a barcode','AI suggests fields to review before saving.','products','create','Barcode'),
+ use('Create manually','Enter all the product details yourself.','products','create','Manual'),
+ use('Import a sheet','Bring in many products from a CSV file.','products','import','Import')
+]});
+Object.assign(C.purchaseOrders,{cta:'Create your first purchase order'});
+Object.assign(C.roles,{cta:'Create your first role'});
+Object.assign(C.departments,{cta:'Create your first department'});
+Object.assign(C.brands,{cta:'Create your first brand'});
+Object.assign(C.tags,{cta:'Create your first tag'});
+Object.assign(C.customers,{cta:'Add your first customer'});
+Object.assign(C.giftCards,{cta:'Set up gift cards'});
+// Only actual sequential workflows appear as steppers on feature pages.
+// The overview pages have an independent progressive setup checklist.
+const STEPPER_V2=new Set(['pricebooks','schedules','quotes','invoices','invoicePayments','purchaseOrders','payments','transfers']);
+const BOTTOM_LABELS={
+ employees:'Start with a role',roles:'Start from a role template',schedules:'How scheduling works',
+ products:'Choose how to add products',pricebooks:'How customer pricing works',departments:'Why departments matter',
+ tags:'Ways to use tags',brands:'What brands help with',modifiers:'Start with a common set',promotions:'Start with an offer type',
+ posorders:'What you can review here',quotes:'From quote to invoice',invoices:'From invoice to payment',invoicePayments:'How payments stay organized',
+ vendors:'A vendor record helps you',purchaseOrders:'How ordering works',purchaseReceipts:'Choose how to receive',
+ purchaseBills:'Choose how to add a bill',payments:'How vendor payments work',transfers:'How transfers work',
+ customers:'One customer profile, more context',rewards:'Choose how customers earn',giftCards:'What gift cards make possible',
+ segments:'Start with a customer group',campaigns:'Start with a message',hardware:'Choose your POS platform',reports:'Insights you will unlock'
+};
+// More accurate walkthrough detail on feature pages.
+FLOW_COPY.hrOverview.heading='Your first team, step by step';
+FLOW_COPY.hrOverview.steps=[{title:'Create a role',desc:'Review access for each responsibility.',target:'roles'},{title:'Add employees',desc:'Assign saved roles to your team.',target:'employees'},{title:'Plan schedules',desc:'Create shifts for your staff.',target:'schedules'}];
+FLOW_COPY.productsOverview.steps=[{title:'Set up taxes',desc:'Define the tax rules you need.',target:'taxes'},{title:'Create departments',desc:'Group products your team can find.',target:'departments'},{title:'Add products',desc:'Scan, create manually, or import a sheet.',target:'products'}];
+FLOW_COPY.pricebooks.steps=[{title:'Create a price book',desc:'Choose products and special prices.',target:'pricebooks'},{title:'Assign to customers',desc:'Choose who receives those prices.',target:'customers'},{title:'Apply at checkout',desc:'See the special price when they shop.',target:'posorders'}];
+FLOW_COPY.invoices.steps=[{title:'Create an invoice',desc:'Add customer, items, and amount.',target:'invoices'},{title:'Share it',desc:'Send the bill for payment.',target:'invoices'},{title:'Track what is due',desc:'See paid and remaining balances.',target:'invoicePayments'}];
+FLOW_COPY.purchaseOrders.steps=[{title:'Choose a vendor',desc:'Pick who you are ordering from.',target:'vendors'},{title:'Add products',desc:'Set quantities and expected costs.',target:'purchaseOrders'},{title:'Receive the stock',desc:'Check what actually arrived.',target:'purchaseReceipts'}];
+FLOW_COPY.schedules.steps=[{title:'Add your team',desc:'Roles and employees must be ready.',target:'employees'},{title:'Plan the week',desc:'Create shifts and store closures.',target:'schedules'},{title:'Review hours',desc:'See attendance and labour costs.',target:'schedules'}];
+FLOW_COPY.purchaseReceipts.steps=[{title:'Choose a source',desc:'Start from a PO or enter manually.',target:'purchaseReceipts'},{title:'Check quantities',desc:'Compare ordered and delivered items.',target:'purchaseReceipts'},{title:'Update stock',desc:'Confirm what was received.',target:'purchaseReceipts'}];
+FLOW_COPY.purchaseBills.steps=[{title:'Add a bill',desc:'Start from a receipt or enter manually.',target:'purchaseBills'},{title:'Review the amount',desc:'Capture charges and due dates.',target:'purchaseBills'},{title:'Track payment',desc:'See what still needs to be paid.',target:'payments'}];
+FLOW_COPY.giftCards.steps=[{title:'Sell a gift card',desc:'Choose an amount at the register.',target:'giftCards'},{title:'Redeem at checkout',desc:'Apply part or all of the balance.',target:'posorders'},{title:'See the remaining value',desc:'Keep the rest for the next visit.',target:'giftCards'}];
+
+// Data-illustration primitives: every visual describes that page's actual purpose.
+const vtag=(t,tone='')=>`<span class="vz-chip ${tone}">${esc(t)}</span>`;
+const vr=(a,b,cls='')=>`<div class="vz-row"><span>${esc(a)}</span><b class="${cls}">${esc(b)}</b></div>`;
+const vp=(title,body,css,tag='',cls='')=>`<div class="vz-panel ${cls}" style="${css}"><div class="vz-pad"><div class="vz-head"><span>${esc(title)}</span>${tag?vtag(tag):''}</div>${body}</div></div>`;
+const va=(initials,cls='')=>`<span class="vz-avatar ${cls}">${esc(initials)}</span>`;
+const vl=(width='100%')=>`<div class="vz-stackline" style="width:${width}"></div>`;
+const vf=(title,body,css,cls='')=>`<div class="vz-folder ${cls}" style="${css}"><div class="vz-folder-icon">${body}</div><strong>${esc(title)}</strong></div>`;
+const vchart=()=>`<svg viewBox="0 0 340 85" class="vz-svg" aria-hidden="true"><path d="M0 70H340" stroke="#e2e7f2"/><path d="M8 63C35 67 48 40 73 46S111 65 139 41S177 54 207 28S245 45 274 16S320 27 332 8" fill="none" stroke="#326ae0" stroke-width="3" stroke-linecap="round"/><path d="M8 63C35 67 48 40 73 46S111 65 139 41S177 54 207 28S245 45 274 16S320 27 332 8V80H8Z" fill="#dce8ff" opacity=".45"/></svg>`;
+function visualStageFor(id){
+ let v='';
+ switch(id){
+ case 'mainDashboard':
+  v=vp('Completed checkout',`${vr('Coca-Cola 2 L × 2','$5.98')}${vr('Whole Milk','$4.49')}${vr('Payment · Card','$10.47','vz-green')}<div class="vz-status"><i></i>First sale recorded</div>`, 'left:69px;top:54px;width:280px', 'Sale #1001')+
+    vp('What unlocks on your dashboard',`<div class="vz-big">$10.47</div><div class="vz-small">First sale · 3 items</div><div style="height:65px;margin:6px -2px 0">${vchart()}</div>`, 'left:341px;top:28px;width:287px', 'Preview');break;
+ case 'hrOverview':
+  v=vp('1 · Create roles',`${vr('Cashier','Register')}${vr('Store manager','Back office')}`,'left:25px;top:77px;width:213px','Access')+
+    `<span class="vz-connector-arrow" style="left:240px;top:140px"></span>`+
+    vp('2 · Add your team',`<div class="vz-inline">${va('MG')}<div><strong>Maria Garcia</strong><div class="vz-small">Cashier</div></div></div>${vr('Status','Active')}`,'left:250px;top:38px;width:212px','Employee')+
+    `<span class="vz-connector-arrow" style="left:462px;top:140px"></span>`+
+    vp('3 · Plan a shift',`<div class="vz-big" style="font-size:17px">Mon · 9:00–5:00</div>${vr('Assigned to','Maria G.')}${vtag('Scheduled','good')}`,'left:476px;top:77px;width:202px','Schedule');break;
+ case 'employees':
+  v=vp('Employee',`<div class="vz-inline">${va('DP')}<div><strong>Daniel Park</strong><div class="vz-small">Store manager</div></div></div>${vl('85%')}${vl('66%')}`, 'left:42px;top:63px;width:217px;transform:rotate(-7deg)', '', 'vz-fade')+
+    vp('Employee',`<div class="vz-inline">${va('AC','vio')}<div><strong>Ava Collins</strong><div class="vz-small">Stockroom staff</div></div></div>${vl('80%')}${vl('63%')}`, 'left:449px;top:64px;width:218px;transform:rotate(6deg)', '', 'vz-fade')+
+    vp('Maria Garcia',`<div class="vz-inline">${va('MG','grn')}<div><strong>Cashier</strong><div class="vz-small">Phoenix · Active</div></div></div><div class="vz-rule"></div>${vr('Role','Cashier')}${vr('Next shift','Mon · 9 AM–5 PM')}`, 'left:218px;top:36px;width:275px;z-index:4;border-color:#bdcffb', 'Employee profile');break;
+ case 'roles':
+  v=['Cashier','Store manager','Stockroom staff'].map((t,i)=>vp(t,`<div class="vz-perm"><div><span>${['Checkout','Operations','Receiving'][i]}</span><i>✓</i></div><div><span>${['Sales history','Approvals','Products'][i]}</span><i>✓</i></div><div><span>${['Restricted settings','Staff access','Inventory'][i]}</span><i>${i===0?'—':'✓'}</i></div></div>`,`left:${36+i*223}px;top:${i===1?28:56}px;width:209px;${i===1?'border-color:#aec7ff;box-shadow:0 17px 34px #2952a51b;':''}`,i===1?'Example role':'Access')).join('');break;
+ case 'schedules':
+  v=vp('Week of Nov 9',`<div class="vz-week"><b></b>${['Mon','Tue','Wed','Thu','Fri'].map(x=>`<strong>${x}</strong>`).join('')}${['Maria','Daniel','Ava'].map((n,i)=>`<b>${n}</b>${[1,2,3,4,5].map((d)=>`<span class="${(i===1&&d===2)||(i===2&&d===4)?'vz-off':'vz-shift'}">${(i===1&&d===2)||(i===2&&d===4)?'Off':'9–5'}</span>`).join('')}`).join('')}</div><div class="vz-note" style="margin-top:11px">Schedule for 3 employees</div>`,'left:75px;top:24px;width:560px','Shifts');break;
+ case 'productsOverview':
+  v=vp('Get your catalog ready',`${vr('Taxes','Default rule set')}${vr('Departments','Beverages, Snacks')}${vr('Products','Scan · Create · Import')}`,'left:63px;top:35px;width:300px','Setup')+
+    vp('Product at checkout',`<div class="vz-inline"><div class="vz-product-img"><div class="vz-bottle"></div></div><div><strong>Orange soda</strong><div class="vz-small">Beverages · UPC 049000</div><div class="vz-big" style="font-size:21px">$2.99</div></div></div>`,'left:361px;top:66px;width:285px','Preview');break;
+ case 'products':
+  v=`<div class="vz-scanner" style="left:47px;top:100px">▥</div><div style="position:absolute;left:97px;top:181px;width:80px;height:25px">${'<div class="vz-barcode"></div>'}</div>`+
+    vp('Product details',`<div class="vz-inline"><div class="vz-product-img"><div class="vz-bottle"></div></div><div><div class="vz-card-title">Orange Soda</div><div class="vz-small">UPC · 049000000443</div><div class="vz-big" style="font-size:18px">$2.99</div></div></div><div class="vz-rule"></div>${vr('Department','Beverages')}${vr('Tax','Default sales tax')}`,'left:192px;top:26px;width:297px','AI suggestion')+
+    vp('Your catalog',`${vr('Beverages','12 items')}${vr('Snacks','8 items')}${vr('Grocery','22 items')}`,'left:470px;top:78px;width:210px','Organized');break;
+ case 'pricebooks':
+  v=vp('Shelf price',`<div class="vz-small">Orange Soda · 16 oz</div><div class="vz-big" style="margin-top:14px">$2.99</div>${vtag('Everyday price')}`,'left:44px;top:84px;width:195px')+
+    `<span class="vz-arrow" style="left:245px;top:125px">→</span>`+
+    vp('Customer price book',`${vr('Maple Street Market','Assigned')}${vr('Orange Soda','$2.49','vz-blue')}<div class="vz-status"><i></i>Customer-specific price</div>`,'left:280px;top:30px;width:251px','Special pricing')+
+    vp('At checkout',`${vr('Selected customer','Maple Street')}${vr('Orange Soda','$2.49','vz-blue')}${vtag('Price applied','good')}`,'left:475px;top:112px;width:208px','POS');break;
+ case 'departments':
+  v=vf('Beverages',`<span class="vz-product-thumb blue"></span><span class="vz-product-thumb"></span><span class="vz-product-thumb green"></span>`,'left:78px;top:76px')+
+    vf('Snacks',`<span class="vz-product-thumb purple"></span><span class="vz-product-thumb"></span><span class="vz-product-thumb blue"></span>`,'left:283px;top:43px','purple')+
+    vf('Grocery',`<span class="vz-product-thumb green"></span><span class="vz-product-thumb blue"></span><span class="vz-product-thumb"></span>`,'left:492px;top:76px','green');break;
+ case 'tags':
+  v=vp('Catalog tags',`<div class="vz-inline" style="flex-wrap:wrap;gap:7px">${vtag('Featured')}${vtag('Seasonal')}${vtag('Online favorites')}</div><div class="vz-rule"></div>${vr('Sparkling Water','Seasonal')}${vr('Potato Chips','Featured')}`,'left:100px;top:38px;width:303px','Labels')+
+    vp('POS browsing',`<div class="vz-note" style="margin-bottom:9px">Featured</div><div class="vz-mini-grid">${['Coke','Chips','Water'].map((n,i)=>`<div class="vz-mini-card" style="padding:7px;text-align:center"><span class="vz-product-thumb ${i%2?'blue':'green'}" style="display:block;margin:0 auto 6px"></span><strong style="font-size:10px">${n}</strong></div>`).join('')}</div>`,'left:373px;top:73px;width:267px','Preview');break;
+ case 'brands':
+  v=vf('Everly',`<span class="vz-product-thumb purple"></span><span class="vz-product-thumb blue"></span>`,'left:73px;top:82px','purple')+
+    vf('Acme',`<span class="vz-product-thumb blue"></span><span class="vz-product-thumb"></span><span class="vz-product-thumb green"></span>`,'left:280px;top:44px')+
+    vf('Nordic',`<span class="vz-product-thumb green"></span><span class="vz-product-thumb purple"></span>`,'left:486px;top:82px','green');break;
+ case 'modifiers':
+  v=vp('Chocolate shake',`<div style="display:flex;justify-content:center;margin:10px"><div class="vz-ice"></div></div><div style="text-align:center;font-size:17px;font-weight:770">$5.50</div>`,'left:99px;top:43px;width:230px')+
+    vp('Choose your options',`<div class="vz-note">Size</div><div class="vz-inline" style="margin:7px 0 10px;gap:5px">${vtag('Small')}${vtag('Medium')}${vtag('Large')}</div>${vr('✓ Whipped cream','+$0.50')}${vr('○ Chocolate chips','+$0.50')}<div class="vz-note" style="margin-top:8px">Shown at checkout</div>`,'left:323px;top:25px;width:307px','Modifier set');break;
+ case 'promotions':
+  v=vp('Checkout receipt',`${vr('Coca-Cola 2 L × 3','$8.97')}${vr('Buy 2, get 1 free','−$2.99','vz-green')}${vr('Folgers coffee','$11.99')}<div class="vz-rule"></div>${vr('Customer saves','$2.99','vz-green')}`,'left:118px;top:25px;width:260px','Auto-applied')+
+    vp('Promoted item performance',`<div class="vz-note">Units sold · Last 7 days</div><div style="height:75px;margin:3px 0 0">${vchart()}</div><div class="vz-note">Example outcome · Not a forecast</div>`,'left:376px;top:76px;width:259px','Sales insight');break;
+ case 'salesOverview':
+  v=vp('Today at the register',`${vr('Completed orders','28')}${vr('Payments received','$1,286.40')}${vr('Open quotes','2')}`,'left:61px;top:47px;width:281px','Sales')+
+    vp('Keep track of what is owed',`${vr('Invoice INV-0438','$341.98')}${vr('Paid','$100.00','vz-green')}${vr('Balance due','$241.98')}`,'left:337px;top:76px;width:303px','Receivables');break;
+ case 'posorders':
+  v=vp('Orders',`${['#2512 · Today','#2511 · Today','#2510 · Yesterday'].map((n,i)=>`<div class="vz-row"><span>${n}</span>${vtag(i===1?'Unpaid':'Paid',i===1?'warn':'good')}</div>`).join('')}`,'left:94px;top:53px;width:278px','Transaction list')+
+    vp('Order #2512',`${vr('2 × Orange Soda','$5.98')}${vr('1 × Whole Milk','$4.49')}${vr('Payment','Card')}${vr('Total','$10.47')}`,'left:355px;top:26px;width:278px','Paid');break;
+ case 'quotes':
+  v=vp('Quote · Q-0091',`${vr('Customer','Lupita’s Kitchen')}${vr('4 cases of soda','$59.96')}${vr('Ice bags × 6','$29.94')}${vr('Quoted total','$89.90')}`,'left:103px;top:30px;width:290px','Ready to send')+
+    vp('When accepted',`${vr('Quote','Confirmed')}${vr('Convert to','Invoice')}${vtag('Customer and items carried over','good')}`,'left:386px;top:84px;width:240px','Next step');break;
+ case 'invoices':
+  v=vp('Invoice · INV-0438',`${vr('Coffee beans','$125.00')}${vr('Paper cups','$50.00')}<div class="vz-rule"></div>${vr('Invoice total','$175.00')}${vtag('Partially paid','warn')}`,'left:82px;top:24px;width:290px','Customer billing')+
+    vp('Payment progress',`<div class="vz-big">$100 <span style="font-size:12px;color:#8a839c;font-weight:500">of $175</span></div><div class="vz-track" style="margin:12px 0"><i style="width:57%"></i></div>${vr('Remaining','$75.00')}`,'left:368px;top:88px;width:280px','57% collected');break;
+ case 'invoicePayments':
+  v=vp('Customer payment',`${vr('Invoice','INV-0438')}${vr('Customer','Lupita’s Kitchen')}${vr('Payment method','Card')}${vr('Payment received','$100.00','vz-green')}`,'left:90px;top:37px;width:289px','Recorded')+
+    vp('Updated invoice balance',`<div class="vz-big">$241.98</div><div class="vz-small">Still outstanding</div><div class="vz-track" style="margin:12px 0"><i style="width:29%"></i></div>${vtag('Payment linked','good')}`,'left:377px;top:78px;width:263px','Live balance');break;
+ case 'purchasingOverview':
+  v=['Vendor','Order stock','Receive goods','Pay bill'].map((n,i)=>vp(`${i+1}. ${n}`,`<div class="vz-note">${['Supplier details','PO-1001','Receipt PR-220','Bill PB-100'][i]}</div>${vtag(['Ready','Ordered','Received','Paid'][i],i>=2?'good':'')}`,`left:${8+i*177}px;top:${i%2===0?73:48}px;width:166px`)).join('')+
+    [184,360,535].map(x=>`<span class="vz-connector-arrow" style="left:${x}px;top:137px;width:24px"></span>`).join('');break;
+ case 'vendors':
+  v=vp('Sunrise Suppliers',`<div class="vz-inline"><span class="vz-avatar" style="border-radius:12px">S</span><div><strong>Wholesale supplier</strong><div class="vz-small">Contact · Alex Morgan</div></div></div>${vr('Email','orders@sunrise.example')}${vr('Payment terms','Net 15')}`,'left:72px;top:36px;width:302px','Vendor profile')+
+    vp('Linked purchases',`${vr('PO-1001','Ordered')}${vr('PR-220','Received')}${vr('PB-100','$620 due')}`,'left:371px;top:65px;width:254px','Connected');break;
+ case 'purchaseOrders':
+  v=vp('Purchase order · PO-1001',`${vr('Vendor','Sunrise Suppliers')}${vr('Coca-Cola 2 L','8 cases')}${vr('Sprite 2 L','4 cases')}${vr('Total','$211.80')}`,'left:91px;top:23px;width:303px','Ordered')+
+    vp('When a delivery arrives',`${vr('Ordered','12 cases')}${vr('Received','11 cases')}<div class="vz-track" style="margin:9px 0"><i style="width:92%"></i></div>${vtag('1 case still expected','warn')}`,'left:389px;top:84px;width:253px','Receiving');break;
+ case 'purchaseReceipts':
+  v=vp('Delivery · PR-220',`${vr('Item','Ordered / Received')}${vr('Coca-Cola 2 L','8 / 8 cases')}${vr('Sprite 2 L','4 / 3 cases')}<div class="vz-rule"></div>${vtag('Partial delivery','warn')}`,'left:102px;top:33px;width:300px','From PO')+
+    vp('Stock update',`${vr('Units checked in','11')}${vr('Still expected','1 case')}${vr('Inventory change','Recorded','vz-green')}`,'left:397px;top:81px;width:245px','Receiving');break;
+ case 'purchaseBills':
+  v=vp('Vendor bill · PB-100',`${vr('Vendor','Sunrise Suppliers')}${vr('Due date','Nov 30')}${vr('Invoice amount','$620.00')}${vtag('Awaiting payment','warn')}`,'left:95px;top:25px;width:292px','From receipt')+
+    vp('Outstanding balance',`<div class="vz-big">$620.00</div><div class="vz-small">Due to this supplier</div>${vr('Receipt','PR-220')}${vtag('Ready to pay')}`,'left:380px;top:86px;width:252px','Bills');break;
+ case 'payments':
+  v=vp('Payment · PBP-0001',`${vr('Vendor bill','PB-100')}${vr('Method','Bank transfer')}${vr('Paid today','$300.00','vz-green')}`,'left:105px;top:36px;width:279px','Recorded')+
+    vp('Bill balance',`<div class="vz-big">$320.00</div><div class="vz-small">Still due on PB-100</div><div class="vz-track" style="margin:15px 0"><i style="width:48%"></i></div>${vtag('Partially paid','warn')}`,'left:379px;top:80px;width:262px','Updated');break;
+ case 'transfers':
+  v=vp('Phoenix',`<div class="vz-big" style="font-size:17px">Source location</div>${vr('Orange Soda','−12 units')}${vtag('Items sent')}`,'left:55px;top:58px;width:235px','Sending')+
+    `<span class="vz-connector-arrow" style="left:304px;top:130px;width:92px"></span>`+
+    vp('Mesa',`<div class="vz-big" style="font-size:17px">Destination location</div>${vr('Orange Soda','+12 units')}${vtag('Received','good')}`,'left:416px;top:58px;width:235px','Receiving');break;
+ case 'engagementOverview':
+  v=vp('Customer profile',`<div class="vz-inline">${va('MG','grn')}<div><strong>Maria Garcia</strong><div class="vz-small">Regular shopper</div></div></div>${vr('Visits','18')}`,'left:29px;top:68px;width:228px')+
+    vp('Rewards',`<div class="vz-big">320 pts</div><div class="vz-track" style="margin:13px 0"><i style="width:80%"></i></div><div class="vz-small">$5 off at 400 points</div>`,'left:239px;top:27px;width:236px','Loyalty')+
+    vp('A relevant offer',`<div class="vz-note">Weekend special</div>${vr('Audience','Regulars')}${vtag('Ready to send')}`,'left:456px;top:79px;width:220px','Campaign');break;
+ case 'customers':
+  v=vp('Maria Garcia',`<div class="vz-inline">${va('MG','grn')}<div><strong>Gold member</strong><div class="vz-small">Customer since 2025</div></div></div><div class="vz-mini-grid" style="margin-top:13px"><div class="vz-mini-card" style="text-align:center;padding:9px 4px"><strong>18</strong><div class="vz-note">Visits</div></div><div class="vz-mini-card" style="text-align:center;padding:9px 4px"><strong>320</strong><div class="vz-note">Points</div></div><div class="vz-mini-card" style="text-align:center;padding:9px 4px"><strong>$150</strong><div class="vz-note">Credit</div></div></div>`,'left:147px;top:30px;width:402px','Customer profile');break;
+ case 'rewards':
+  v=`<div class="vz-panel vz-gift" style="left:120px;top:31px;width:307px;height:186px;transform:rotate(-4deg)"><div class="vz-pad"><div class="vz-small" style="color:#dbe6ff">Maple Street Market · Rewards</div><div class="vz-big" style="margin-top:15px">320 points</div><div class="vz-track" style="margin:12px 0;background:#ffffff38"><i style="width:80%;background:white"></i></div><div class="vz-small" style="color:#e4ebff">80 points until your next reward</div></div></div>`+
+    vp('Next reward',`<div class="vz-big" style="color:#235acb">$5 off</div><div class="vz-small">Unlock at 400 points</div>${vtag('Redeem at POS','good')}`,'left:420px;top:86px;width:200px','Coming up');break;
+ case 'giftCards':
+  v=`<div class="vz-panel vz-gift" style="left:120px;top:43px;width:329px;height:180px;transform:rotate(-5deg)"><div class="vz-pad"><div class="vz-head" style="color:white"><span>Maple Street Market</span><span>✧</span></div><div class="vz-big" style="font-size:33px;margin:40px 0 0">$50.00</div><div class="vz-small" style="color:#d8e4ff">Gift card</div></div></div>`+
+    vp('Redemption at checkout',`${vr('Original value','$50.00')}${vr('Redeemed','$25.00')}${vr('Remaining','$25.00','vz-green')}<div class="vz-track" style="margin:10px 0"><i style="width:50%"></i></div>`,'left:421px;top:90px;width:210px','Balance');break;
+ case 'segments':
+  v=vp('Customers who haven’t returned',`${vr('Rule','No visit in 60 days')}${vr('Eligible shoppers','64')}${vtag('Smart segment')}`,'left:71px;top:55px;width:309px','Audience')+
+    vp('Included customers',`${['Maria Garcia','Daniel Park','Ava Collins'].map((n,i)=>`<div class="vz-row"><span class="vz-inline">${va(['MG','DP','AC'][i])}${esc(n)}</span>${vtag('Matched')}</div>`).join('')}`,'left:366px;top:28px;width:260px','Preview');break;
+ case 'campaigns':
+  v=`<div class="vz-phone" style="position:absolute;left:161px;top:10px"><div class="vz-note" style="text-align:center;margin-bottom:14px">Messages · Maple Street</div><div class="vz-bubble">Hi Maria! Our weekend store offer is ready. Stop by to see what’s new.</div><div class="vz-note" style="margin-top:14px;text-align:right">Sample message · not sent</div></div>`+
+    vp('Campaign preview',`${vr('Audience','Subscribed shoppers')}${vr('Channel','Text message')}${vr('Schedule','Friday · 9 AM')}${vtag('Draft · Ready to review')}`,'left:393px;top:83px;width:235px','Outbound');break;
+ case 'reports':
+  v=vp('Sales report',`<div class="vz-big">$2,480</div><div class="vz-note">Example weekly sales</div><div style="height:75px;margin-top:8px">${vchart()}</div>`,'left:95px;top:28px;width:355px','Trend')+
+    vp('Top-selling products',`${vr('Orange Soda','118 sold')}${vr('Whole Milk','89 sold')}${vr('Potato Chips','74 sold')}`,'left:415px;top:88px;width:233px','Top items');break;
+ case 'hardware':
+  v=vp('Android POS',`<div class="vz-big" style="font-size:22px;text-align:center;margin:8px">▣</div>${vtag('Touchscreen POS')}${vr('Scanner','Connected')}`,'left:84px;top:34px;width:236px','Terminal')+
+    vp('Windows POS',`<div class="vz-big" style="font-size:23px;text-align:center;margin:8px">▤</div>${vtag('Desktop POS')}${vr('Receipt printer','Connected')}`,'left:367px;top:34px;width:236px','Computer')+
+    `<div class="vz-chip" style="position:absolute;left:302px;top:192px;background:#eaf8f1;color:#208460">Devices ready for checkout</div>`;break;
+ default:
+  v=vp('How this feature works',`${vr('Create','Ready')}${vr('Use at checkout','Available')}${vr('Keep records','Organized')}`,'left:171px;top:40px;width:355px','Preview');
+ }
+ return `<div class="scene"><span class="stamp"><span class="vz-dot"></span> Illustrative · Not store data</span><div class="stage"><div class="vz">${v}</div></div></div>`;
+}
+
+function v2Icon(kind){const P={
+ user:'<circle cx="12" cy="8" r="3.5"/><path d="M5 20a7 7 0 0 1 14 0"/>',
+ box:'<rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M10 5v15"/>',
+ chart:'<path d="M3 20h18M6 16v-5M12 16V5M18 16V9"/>',
+ calendar:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18"/>',
+ tag:'<path d="M20 13l-7 7a2 2 0 0 1-3 0l-7-7V4h9l8 8z"/><circle cx="7.5" cy="8" r="1"/>',
+ receipt:'<path d="M6 3h12v18l-3-2-3 2-3-2-3 2zM9 8h6M9 12h6"/>',
+ scan:'<path d="M3 8V4h5M16 4h5v4M21 16v4h-5M8 20H3v-4M7 12h10M9 9v6M12 9v6M15 9v6"/>',
+ layers:'<path d="M12 3 3 8l9 5 9-5-9-5ZM3 12l9 5 9-5M3 16l9 5 9-5"/>',
+ gift:'<rect x="3" y="8" width="18" height="13" rx="2"/><path d="M3 12h18M12 8v13M12 8c-7 0-6-6-3-6 2 0 3 4 3 6Zm0 0c7 0 6-6 3-6-2 0-3 4-3 6Z"/>',
+ wallet:'<rect x="3" y="5" width="18" height="15" rx="2"/><path d="M15 12h6M17 13h.01"/>',
+ monitor:'<rect x="2" y="3" width="20" height="15" rx="2"/><path d="M8 22h8M12 18v4"/>',
+ truck:'<path d="M3 5h12v12H3zM15 9h4l3 4v4h-7"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/>',
+ check:'<path d="M5 12l4 4L19 6"/>',
+ percent:'<circle cx="7" cy="7" r="2"/><circle cx="17" cy="17" r="2"/><path d="m19 5-14 14"/>',
+ link:'<path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/>',
+ folder:'<path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v10H3z"/>',
+ search:'<circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/>',
+ file:'<path d="M6 2h9l5 5v15H6zM15 2v5h5M9 12h8M9 16h8"/>'};
+ const path=P[kind]||P.layers;return `<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${path}</svg>`;
+}
+function cardGlyph(id,c,i){const t=c.title.toLowerCase();if(/scan|barcode/.test(t))return 'scan';if(/import|sheet/.test(t))return 'file';if(/employee|staff|cashier|customer|spend|visits|audience/.test(t))return 'user';if(/role|access|permission|review/.test(t))return 'check';if(/price|sale|offer|discount|promotion|tax/.test(t))return 'tag';if(/schedule|shift|hour|season/.test(t))return 'calendar';if(/bill|invoice|quote|receipt/.test(t))return 'receipt';if(/vendor|stock|delivery|transfer|receive/.test(t))return 'truck';if(/credit|payment|balance|gift/.test(t))return 'wallet';if(/product|item|catalog|modifier/.test(t))return 'box';if(/group|department|brand|tag/.test(t))return 'folder';if(/report|performance|trend|compare|measure/.test(t))return 'chart';if(/hardware|android|windows/.test(t))return 'monitor';return ['layers','chart','check','box'][i%4]}
+function v2Journey(id,{progress=false}={}){
+ const f=flowFor(id);const steps=f.steps||[];
+ return `<div class="journey" role="group" aria-label="${esc(f.heading)}">${steps.map((s,i)=>{const ready=progress&&isReady(s.target);return `<button class="journey-step ${ready?'done':''}" data-action="flow-step" data-index="${i}" aria-label="Learn about step ${i+1}, ${esc(s.title)}"><span class="num">${ready?'✓':i+1}</span><strong>${esc(s.title)}</strong><p>${esc(s.desc)}</p><em>See details →</em></button>`}).join('')}</div>`;
+}
+function v2ValuePage(){
+ const id=state.page,c=C[id],noRoles=id==='employees'&&!roleReady();
+ const cards=noRoles?C.roles.cards:c.cards;
+ const title=noRoles?'Start with a role for your team':c.title;
+ const desc=noRoles?'Set access first. Then add your first employee.':c.desc;
+ const primaryId=noRoles?'roles':id;
+ const strategy=STEPPER_V2.has(id)?'stepper':noRoles?'templates':c.kind;
+ const bottom=strategy==='stepper'?
+  `<div class="bottom-header"><strong>${esc(BOTTOM_LABELS[id]||flowFor(id).heading)}</strong><small>3-step workflow</small></div>${v2Journey(id)}`:
+  `<div class="bottom-header"><strong>${esc(noRoles?'Choose your first role':BOTTOM_LABELS[id]||'Explore your options')}</strong><small>${strategy==='templates'||strategy==='methods'||strategy==='paths'?'Ready to start':'What this feature does'}</small></div><div class="cards ${cards.length===4?'four':''} ${['benefits','usecases','insights'].includes(strategy)?'benefits-cards':'choice-cards'}">${cards.map((a,i)=>`<button class="tile" data-action="card" data-index="${i}" aria-label="${esc(a.title)}: ${esc(a.desc)}"><span class="tile-icon">${v2Icon(cardGlyph(id,a,i))}</span><b>${esc(a.title)}</b><p>${esc(a.desc)}</p><span class="tile-link">${a.kind==='create'||a.kind==='preset'||a.kind==='import'?'Start with this':a.kind==='route'?'Explore this feature':'Learn more'} →</span></button>`).join('')}</div>`;
+ const mainBtn=primaryFor(id);
+ return `<div class="value"><div class="hero">${visualStageFor(id)}<div class="eyebrow">${esc(noRoles?'BUILD YOUR TEAM':c.eyebrow)}</div><h2>${esc(title)}</h2><p>${esc(desc)}</p><div class="hero-acts">${btn(mainBtn,'start',primaryId,'blue')}${btn('How it works','guide',id)}</div>${noRoles?'<div class="steps"><span class="step current">1 Create role</span><span class="step">2 Add employee</span><span class="step">3 Plan schedule</span></div>':''}</div><div class="bottom">${bottom}</div><p class="caption">Example only · Your store data is not changed by these previews.</p></div>`;
+}
+function v2OverviewOptions(id){
+ const options={
+ mainDashboard:[['products','Add products','Choose what you sell.','box'],['posorders','Make a sale','Complete a checkout in POS.','receipt'],['reports','See reports','Explore sales trends after your first sale.','chart']],
+ hrOverview:[['roles|Cashier','Cashier role','Checkout and payments.','user'],['roles|Store manager','Store manager role','Operations and oversight.','check'],['roles|Stockroom staff','Stockroom role','Inventory and receiving.','box']],
+ productsOverview:[['products|Barcode','Scan a barcode','Let AI suggest product details.','scan'],['products|Manual','Create manually','Enter the details yourself.','box'],['products|Import','Import a sheet','Bring in a bulk catalog.','file']],
+ salesOverview:[['posorders','Register sales','See completed transactions.','receipt'],['quotes','Customer quotes','Send prices before invoicing.','file'],['invoices','Invoices','Track billed and unpaid sales.','wallet']],
+ purchasingOverview:[['vendors','Vendors','Start with your supplier list.','user'],['purchaseOrders','Purchase orders','Order quantities and expected costs.','receipt'],['purchaseReceipts','Purchase receipts','Check off delivered stock.','truck']],
+ engagementOverview:[['customers','Customer profiles','Recognize regulars at checkout.','user'],['rewards','Rewards','Make coming back worthwhile.','gift'],['campaigns','Campaigns','Reach customers with updates.','wallet']],
+ reports:[['posorders','Sales over time','See when shoppers buy.','chart'],['products','Top products','Understand item performance.','box'],['reports','Busy periods','Plan around your busiest times.','calendar']]
+ };
+ const rows=options[id]||[];
+ const label=id==='productsOverview'?'Choose how to add products':id==='hrOverview'?'Start with a role':id==='reports'?'What reports will show':id==='purchasingOverview'?'What purchasing connects':'Explore what comes next';
+ return `<div class="overview-options"><h3>${esc(label)}</h3>${rows.map(([route,title,desc,icon])=>`<button data-action="start" data-target="${route}"><span class="tile-icon">${v2Icon(icon)}</span><strong>${esc(title)}</strong><p>${esc(desc)}</p><em>${id==='reports'?'Learn more':'Start here'} →</em></button>`).join('')}</div>`;
+}
+function v2SetupOverview(){
+ const id=state.page,c=C[id],steps=c.flow||[];
+ const readiness=steps.map(isReady),firstUnready=readiness.findIndex(x=>!x);
+ const next=steps[firstUnready>=0?firstUnready:Math.min(steps.length-1,0)];
+ const callToAction=firstUnready<0?'Keep exploring':id==='hrOverview'?(next==='roles'?'Create your first role':next==='employees'?'Add your first employee':'Plan a shift'):id==='productsOverview'?(next==='taxes'?'Set up taxes':next==='departments'?'Create a department':'Add products'):id==='purchasingOverview'?(next==='vendors'?'Add your first vendor':next==='purchaseOrders'?'Create a purchase order':'Receive stock'):id==='engagementOverview'?(next==='customers'?'Add a customer':next==='rewards'?'Create a reward program':'Create a campaign'):next==='products'?'Add your first product':next==='posorders'?'Make your first sale':'Continue setup';
+ const action=id==='productsOverview'?'productsOverview':id==='hrOverview'?'hrOverview':id==='purchasingOverview'?'purchasingOverview':id==='engagementOverview'?'engagementOverview':id==='reports'?'products':'posorders';
+ const firstStepAction=firstUnready<0?'posorders':action;
+ const title=id==='mainDashboard'?'Your store starts here':id==='hrOverview'?'Your team starts here':id==='productsOverview'?'Get your catalog ready':id==='purchasingOverview'?'Your purchasing workflow starts here':id==='salesOverview'?'Start with your first sale':id==='engagementOverview'?'Build your customer relationships':'See your first business insights';
+ const desc=id==='mainDashboard'?'Start selling to unlock daily sales insights.':id==='hrOverview'?'Set up access, add employees, and make your first schedule.':id==='productsOverview'?'Taxes and departments make the first product easier to create.':id==='purchasingOverview'?'Connect vendors, orders, receipts, bills, and payments.':id==='salesOverview'?'Your first checkout begins the sales picture.':id==='engagementOverview'?'Save a customer, then add rewards and campaigns.':'Reports begin with the transactions your register records.';
+ return `<div class="overview-layout"><div class="header"><div><h1>${esc(id==='mainDashboard'?'Dashboard':id==='hrOverview'?'HR Overview':id==='engagementOverview'?'Customer Engagement Overview':id==='reports'?'Reports':C[id].section+' Overview')}</h1><p>Make the most of Octopos from the beginning.</p></div><span class="meta-pill">First-use guide</span></div>
+ <div class="overview-intro"><div class="intro-copy"><span class="eyebrow">${esc(c.eyebrow)}</span><h2>${esc(title)}</h2><p>${esc(desc)}</p>${btn(callToAction,'start',firstStepAction,'blue')}<div class="meta-row"><i></i> Live dashboards and records appear as your store starts using this feature.</div></div><div class="intro-viz">${visualStageFor(id)}</div></div>
+ <section class="overview-steps"><div class="bottom-header"><strong>${esc(flowFor(id).heading)}</strong><small>${readiness.filter(Boolean).length} of ${steps.length} ready</small></div>${v2Journey(id,{progress:true})}<div class="overview-status"><span>Each step can be completed in the existing setup flow.</span><b>${readiness.every(Boolean)?'Basics ready':'Next: '+esc(flowFor(id).steps[Math.max(0,firstUnready)]?.title||'Get started')}</b></div></section>${v2OverviewOptions(id)}<div class="overview-foot">Examples are illustrative. Your real metrics replace this guidance as you use Octopos.</div></div>`;
+}
+
+const STEPPER_PAGES=STEPPER_V2;
 const state={page:'mainDashboard',open:'Dashboard',mode:'auto',roles:[],employees:[],shifts:[],records:Object.fromEntries(Object.keys(C).map(k=>[k,[]])),taxes:false,shiftTracking:false,locations:1,communications:false,hardware:false,pending:null,hrChain:false,guide:null,productChain:false,afterCreate:null};
 const isOverview=(id)=>C[id]?.kind==='overview';const count=(id)=>(state.records[id]||[]).length;const has=(id)=>count(id)>0;const $=(sel)=>document.querySelector(sel);const esc=(s)=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function nav(){let html='';for(const [label,key,icon,kids] of G){const active=state.page===key||kids?.some(([id])=>id===state.page);html+=`<div class="nav-group"><button class="nav-parent ${active?'current':''}" data-action="navigate" data-target="${kids?kids[0][0]:key}"><span class="nav-icon">${icon}</span>${label}${kids?`<span class="chev">${active?'⌄':'›'}</span>`:''}</button>${kids?`<div class="subnav" ${active?'':'hidden'}>${kids.map(([id,name])=>`<button class="nav-child ${state.page===id?'active':''}" data-action="navigate" data-target="${id}">${name}</button>`).join('')}</div>`:''}</div>`}$('#nav').innerHTML=html}
@@ -102,50 +623,20 @@ function currentState(){if(state.mode==='sample')return 'sample';if(state.mode==
 function overviewHasData(id){if(id==='hrOverview')return state.employees.length>0&&state.shifts.length>0;if(id==='productsOverview')return has('products')&&has('posorders');if(id==='salesOverview'||id==='mainDashboard'||id==='reports')return has('posorders');if(id==='purchasingOverview')return has('purchaseOrders');if(id==='engagementOverview')return has('customers')&&has('rewards');return false}
 function roleReady(){return state.roles.length>0}function firstNeed(id){if(id==='products'||id==='departments'){if(!state.taxes)return 'taxes';if(id==='products'&&!has('departments'))return 'departments'}if(['promotions','pricebooks','posorders'].includes(id)&&!has('products'))return 'products';if(['quotes','invoices'].includes(id)&&!has('customers'))return 'customers';if(id==='invoicePayments'&&!has('invoices'))return 'invoices';if(id==='purchaseOrders'){if(!has('vendors'))return 'vendors';if(!has('products'))return 'products'}if(id==='purchaseReceipts'&&!has('vendors'))return 'vendors';if(id==='purchaseBills'&&!has('vendors'))return 'vendors';if(id==='payments'&&!has('purchaseBills'))return 'purchaseBills';if(id==='transfers'){if(state.locations<2)return 'locations';if(!has('products'))return 'products'}if(id==='campaigns'&&!state.communications)return 'communications';return null}
 function btn(label,action,target='',style=''){return `<button class="button ${style}" data-action="${action}" data-target="${target}">${esc(label)}</button>`}
-function stageFor(id){let c=C[id];let main='';let side='';let kind=id.includes('Overview')||id==='mainDashboard'||id==='reports'?'analytics':id==='promotions'?'promo':id==='schedules'?'schedule':id==='products'?'catalog':id.startsWith('purchase')||id==='payments'?'purchase':id==='roles'||id==='employees'?'people':id==='rewards'?'loyalty':'generic';
-if(kind==='analytics'){main='<div class="demo-wide">$2,480.00</div><div class="muted" style="font-size:11px">Example sales this week</div><div class="demo-bars">'+[32,63,44,70,49,84,63].map(x=>`<i style="height:${x}%"></i>`).join('')+'</div>';side='<div class="demo-wide">38</div><div class="muted" style="font-size:11px">Orders this week</div>'+demoRow('Average basket','$65.26')}
-else if(kind==='promo'){main=demoRow('Coca-Cola 2 L × 3','$8.97')+demoRow('Buy 2, get 1 free','−$2.99')+demoRow('Total','$5.98');side='<div class="demo-wide" style="color:var(--green)">+24%</div><div class="muted" style="font-size:11px">Example item sales lift</div><div class="demo-bars">'+[29,35,46,40,57].map(x=>`<i style="height:${x}%"></i>`).join('')+'</div>'}
-else if(kind==='schedule'){main=demoRow('Maria G.','Mon–Fri · 9a–5p')+demoRow('Daniel P.','Tue–Sat · 10a–6p')+demoRow('Ava C.','Wed–Fri · 8a–4p');side='<div class="demo-wide">104 h</div><div class="muted" style="font-size:11px">Example planned hours</div>'}
-else if(kind==='catalog'){main=demoRow('Coca-Cola 2 L','$2.99')+demoRow('Whole Milk 1 gal','$4.49')+demoRow('Potato Chips','$3.49');side=demoRow('Products ready','3')+demoRow('Department','Beverages')+demoRow('Available at POS','Yes')}
-else if(kind==='purchase'){main=demoRow('Coca-Cola 2 L','8 cases')+demoRow('Sprite 2 L','4 cases')+demoRow('Ordered','12 cases');side=demoRow('Received','11 cases')+demoRow('Still expected','1 case')+demoRow('Stock update','Recorded')}
-else if(kind==='people'){main=demoRow('Maria Garcia','Cashier')+demoRow('Daniel Park','Store manager')+demoRow('Ava Collins','Stockroom');side=demoRow('Cashier','POS access')+demoRow('Manager','Store access')+demoRow('Roles','Customizable')}
-else if(kind==='loyalty'){main='<div class="demo-wide">80 / 100</div><div class="muted" style="font-size:11px">Example reward progress</div>'+demoRow('Earned today','+24 points');side=demoRow('Next reward','$5 off')+demoRow('Customer','Maria G.')}
-else{main=demoRow(c.cards[0]?.title,'Enabled')+demoRow(c.cards[1]?.title,'Ready')+demoRow(c.cards[2]?.title,'Available');side=demoRow('Store','Maple Street Market')+demoRow('Status','Example')}
-return `<div class="scene"><span class="stamp">● EXAMPLE · NOT STORE DATA</span><div class="stage"><div class="demo-card one"><div class="demo-title">${esc(c.title.split(',')[0].slice(0,29))}<span class="demo-tag">Example</span></div>${main}</div><div class="demo-card two"><div class="demo-title">What it looks like <span class="demo-tag green">Preview</span></div>${side}</div></div></div>`}
+function stageFor(id){return visualStageFor(id)}
 function demoRow(a,b){return `<div class="demo-row"><span>${esc(a)}</span><b>${esc(b)}</b></div>`}
 function primaryFor(id){
  if(['hrOverview','employees','schedules'].includes(id)){if(!roleReady())return 'Create your first role';if(!state.employees.length)return 'Add your first employee';if(!state.shiftTracking)return 'Turn on Shift Tracking';return 'Set your first shift'}
  const need=firstNeed(id);if(need)return {'taxes':'Set up taxes','departments':'Create your first department','products':'Add your first product','vendors':'Add your first vendor','customers':'Add your first customer','invoices':'Create your first invoice','purchaseBills':'Create your first bill','locations':'Add a second location','communications':'Set up messaging'}[need]||`Set up ${need}`;
  return C[id].cta;
 }
-function valuePage(){
- const c=C[state.page],noRoles=state.page==='employees'&&!roleReady();
- const cards=noRoles?[card('Cashier','Checkout and sales access.','role','preset','Cashier'),card('Store manager','Daily store operations access.','role','preset','Store manager'),card('Stockroom staff','Products and inventory access.','role','preset','Stockroom staff')]:c.cards;
- const title=noRoles?'Set up your team in Octopos':c.title,desc=noRoles?'Create a role, then add your first employee.':c.desc;
- const heroAction=(state.page==='hrOverview'&&state.roles.length===0)?'roles':state.page==='employees'&&!roleReady()?'roles':state.page;
- const stepper=STEPPER_PAGES.has(state.page);
- const bottom=stepper?`<div class="bottom-header"><strong>${esc(flowFor(state.page).heading)}</strong><small>3 simple steps</small></div>${flowStepsMarkup(state.page)}${flowQuickActions(state.page)}`:`<div class="bottom-header"><strong>${noRoles?'Choose a role to start with':bottomTitle(c)}</strong><small>${kindLabel(c.kind)}</small></div><div class="cards ${cards.length===4?'four':''}">${cards.map((a,i)=>`<button class="tile" data-action="card" data-index="${i}"><span class="tile-icon">${['◇','▤','▧','♧'][i%4]}</span><b>${esc(a.title)}</b><p>${esc(a.desc)}</p><span class="tile-link">${a.kind==='create'||a.kind==='preset'||a.kind==='import'?'Use this starting point':'Explore'} →</span></button>`).join('')}</div>`;
- return `<div class="value"><div class="hero">${stageFor(state.page)}<div class="eyebrow">${esc(c.eyebrow)}</div><h2>${esc(title)}</h2><p>${esc(desc)}</p><div class="hero-acts">${btn(primaryFor(state.page),'start',heroAction,'blue')}${btn('How it works','guide',state.page)}</div>${noRoles?'<div class="steps"><span class="step current">1 Create role</span><span class="step">2 Add employee</span><span class="step">3 Add schedule</span></div>':''}<div class="small-note">Examples are illustrative and never saved as your store’s data.</div></div><div class="bottom">${bottom}</div><p class="caption">First-use education disappears when this page has records. Searches with no matches keep the standard “No results” state.</p></div>`;
-}
+function valuePage(){return v2ValuePage()}
 function bottomTitle(c){return {templates:'Start with a ready-made option',starters:'Who would you like to add?',workflow:'How it works',methods:'Choose how to get started',overview:'Your path to the first useful insight',examples:'What this makes possible',preview:'What you will see',paths:'Choose where to start',usecases:'Ways to use this feature'}[c.kind]||'Explore the feature'}
 function kindLabel(k){return {templates:'Quick starts',methods:'3 ways to add',overview:'Getting started',workflow:'Step by step',preview:'Example view',paths:'Flexible workflow'}[k]||'Examples'}
 function flowFor(id){return FLOW_COPY[id]||{heading:'How it works',steps:[]}}
 function flowStepsMarkup(id,{progress=false}={}){const f=flowFor(id),three=f.steps;return `<div class="stepper-row" role="group" aria-label="${esc(f.heading)}">${three.map((s,i)=>{const ready=progress&&isReady(s.target);return `<button class="stepper-item ${ready?'stepper-done':''}" data-action="flow-step" data-index="${i}" aria-label="Step ${i+1}: ${esc(s.title)}"><span class="stepper-num">${ready?'✓':`0${i+1}`}</span><span class="stepper-body"><strong>${esc(s.title)}</strong><span>${esc(s.desc)}</span><em>Learn more <span aria-hidden="true">↗</span></em></span></button>`}).join('')}</div>`}
 function flowQuickActions(id){if(id==='purchaseReceipts')return `<div class="stepper-shortcuts"><span>Start with</span>${btn('From purchase order','start','purchaseReceipts|From PO','small')}${btn('Manual receipt','start','purchaseReceipts|Manual','small')}</div>`;if(id==='purchaseBills')return `<div class="stepper-shortcuts"><span>Start with</span>${btn('From receipt','start','purchaseBills|From receipt','small')}${btn('Enter manually','start','purchaseBills|Manual','small')}</div>`;return ''}
-function setupOverview(){
- const c=C[state.page],steps=c.flow||[];
- const ready=steps.map(isReady),allReady=ready.length>0&&ready.every(Boolean);
- const nextIndex=ready.findIndex(x=>!x);
- const next=allReady?'posorders':steps[Math.max(0,nextIndex)];
- const metrics=state.page==='hrOverview'?[['Roles',state.roles.length],['Employees',state.employees.length],['Shifts',state.shifts.length]]:state.page==='productsOverview'?[['Taxes',state.taxes?'Set up':'Not set'],['Departments',count('departments')],['Products',count('products')]]:state.page==='purchasingOverview'?[['Vendors',count('vendors')],['Purchase orders',count('purchaseOrders')],['Receipts',count('purchaseReceipts')]]:state.page==='engagementOverview'?[['Customers',count('customers')],['Rewards',count('rewards')],['Campaigns',count('campaigns')]]:[['Products',count('products')],['Transactions',count('posorders')],['Reports','After first sale']];
- const title=state.page==='productsOverview'?'Products Overview':state.page==='hrOverview'?'HR Overview':(state.page==='mainDashboard'?'Dashboard':state.page==='reports'?'Reports':c.section+' Overview');
- const mainLabel=allReady?(state.page==='productsOverview'?'Make your first sale':'Continue exploring'):('Continue setup');
- const mainAction=allReady?(state.page==='productsOverview'?'posorders':next):(state.page==='productsOverview'?'productsOverview':next);
- const stepDetails=(steps||[]).map((step,i)=>{const copy=flowFor(state.page).steps[i];return `<div class="task"><div><b>${i+1}. ${esc(copy?.title||displayName(step))}</b><p>${esc(copy?.desc||setupDesc(step))}</p></div><div>${isReady(step)?'<span class="step done">✓ Done</span>':btn('Start','overview-step',step,'small '+(step===next?'blue':''))}</div></div>`}).join('');
- const productWays=state.page==='productsOverview'?`<div class="overview-methods"><button class="method-item" data-action="start" data-target="products|Barcode"><span class="tile-icon">▦</span><b>Scan a barcode</b><small>AI suggests details for review</small><span>Start scan ↗</span></button><button class="method-item" data-action="start" data-target="products|Manual"><span class="tile-icon">＋</span><b>Create manually</b><small>Enter your product fields</small><span>Create product ↗</span></button><button class="method-item" data-action="start" data-target="products|Import"><span class="tile-icon">▤</span><b>Import a sheet</b><small>Upload a catalog in bulk</small><span>Import catalog ↗</span></button></div>`:'';
- const secondary=productWays||c.cards.map(a=>`<div class="task"><div><b>${esc(a.title)}</b><p>${esc(a.desc)}</p></div></div>`).join('');
- return `<div class="overview-layout"><div class="header"><div><h1>${esc(title)}</h1><p>Start here. Real insights appear automatically as your store uses this module.</p></div><span class="meta-pill">First-use setup</span></div><div class="setup-hero setup-hero-vertical"><div class="setup-heading"><div><strong>${esc(c.title)}</strong><p>${esc(c.desc)}</p></div>${btn(mainLabel,'start',mainAction,'blue')}</div>${flowStepsMarkup(state.page,{progress:true})}</div><div class="metrics">${metrics.map(([a,b])=>`<div class="metric"><small>${esc(a)}</small><strong>${esc(b)}</strong></div>`).join('')}</div><div class="columns"><div class="box"><h3>Your setup checklist</h3>${stepDetails}</div><div class="box"><h3>${state.page==='productsOverview'?'Choose how to add products':'What you can do next'}</h3>${secondary}</div></div><p class="caption">No empty charts on a new store. Once relevant activity exists, the normal overview returns.</p></div>`;
-}
+function setupOverview(){return v2SetupOverview()}
 function displayName(id){return {taxes:'Set up taxes',departments:'Create departments',products:'Add products',roles:'Create roles',employees:'Add employees',schedules:'Plan shifts',posorders:'Complete a sale',reports:'See reports',vendors:'Add a vendor',purchaseOrders:'Place a purchase order',purchaseReceipts:'Receive items',invoices:'Send invoices',customers:'Add customers',rewards:'Create rewards',campaigns:'Run campaigns'}[id]||C[id]?.title||id}
 function setupDesc(id){return {taxes:'Choose tax rules for your products.',departments:'Group the items in your catalog.',products:'Scan with AI, create manually, or import from a sheet.',roles:'Review what staff can access.',employees:'Add people and assign saved roles.',schedules:'Turn on shift tracking and set working hours.',posorders:'Complete your first POS checkout.',reports:'Reports fill in after sales.',vendors:'Save the suppliers you buy from.',purchaseOrders:'Add ordered products and quantities.',purchaseReceipts:'Record what arrived.',customers:'Create customer profiles.'}[id]||'Use this feature to get started.'}
 function isReady(id){if(id==='taxes')return state.taxes;if(id==='roles')return state.roles.length>0;if(id==='employees')return state.employees.length>0;if(id==='schedules')return state.shifts.length>0;if(id==='locations')return state.locations>1;if(id==='communications')return state.communications;return has(id)}
@@ -187,7 +678,7 @@ function start(id,preset=''){
  if(id==='purchasingOverview')id=!has('vendors')?'vendors':'purchaseOrders';
  if(id==='mainDashboard'||id==='salesOverview')id='posorders';
  if(id==='reports'){guide('reports');return}
- if(id==='roles'&&(state.page==='employees'||state.page==='hrOverview'||state.page==='schedules'||!state.roles.length))state.hrChain=true;
+ if(id==='roles'&&(state.page==='employees'||state.page==='hrOverview'||state.page==='schedules'))state.hrChain=true;
  if(id==='employees'&&!roleReady()){state.pending={id:'employees',preset};state.hrChain=true;form('roles',roles.includes(preset)?preset:'Cashier');return}
  if(id==='schedules'){
    if(!roleReady()){state.pending={id:'schedules',preset};state.hrChain=true;form('roles','Cashier');return}
@@ -272,7 +763,7 @@ function cardClick(i){
  if(x.kind==='import'){start('products','Import');return}
  if(x.kind==='create'||x.kind==='preset'){
   if(x.action==='employee')start('employees',x.preset);
-  else if(x.action==='role'){state.hrChain=state.page==='employees'||(state.page==='roles'&&!roleReady());form('roles',x.preset)}
+  else if(x.action==='role'){state.hrChain=state.page==='employees';form('roles',x.preset)}
   else start(x.action,x.preset);
   return;
  }
