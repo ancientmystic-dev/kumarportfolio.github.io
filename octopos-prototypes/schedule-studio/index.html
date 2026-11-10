@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><meta name="robots" content="noindex,nofollow">
+<title>OctoPOS Schedule Studio — 28 Interactive Concepts</title>
+<style>*{box-sizing:border-box}body{margin:0;background:#f7f8fb;color:#302d44;font:15px/1.6 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh;display:grid;place-items:center;padding:24px}.card{max-width:500px;width:100%;background:#fff;border:1px solid #e3e5eb;border-radius:18px;padding:38px;box-shadow:0 12px 45px #292b4810}.brand{font-size:25px;letter-spacing:-1px;font-weight:750;color:#2356cf;margin-bottom:26px}h1{font-size:24px;line-height:1.25;margin:0 0 12px}p{color:#77748b;margin:0 0 22px}.track{height:5px;background:#eef1f8;border-radius:4px;overflow:hidden;margin-bottom:14px}.progress{height:100%;width:10%;background:#2356cf;transition:width .3s}small{color:#8b879b}button{font:600 14px system-ui;background:#2356cf;color:#fff;border:0;border-radius:8px;padding:11px 18px;cursor:pointer}button:focus-visible{outline:3px solid #7da3ff;outline-offset:3px}[hidden]{display:none!important}</style>
+</head>
+<body>
+<main class="card" aria-live="polite"><div class="brand">octopos</div><h1 id="title">Opening Schedule Studio</h1><p id="description">28 interactive scheduling concepts. One shared workspace.</p><div class="track" id="track"><div class="progress" id="progress"></div></div><small id="status">Loading the prototype…</small><div id="retry" hidden><p>Reload to try again, or use the standalone HTML supplied in the chat.</p><button onclick="location.reload()">Try again</button></div><noscript><p>Please enable JavaScript to open this interactive prototype.</p></noscript></main>
+<script>
+(async function(){
+ const files=['app-1.txt','app-2.txt','app-3.txt','app-4.txt','app-5a.txt','app-5b.txt','app-5c.txt'];
+ const expected='94f69156bae43fbcb2a98a2281c6ff763ab5e82b2775a5ec544be4f5cfa9e10f';
+ const base=new URL('.',location.href); let done=0;
+ try{
+  if(!('DecompressionStream' in window))throw new Error('Please open this prototype in a current version of Chrome, Edge, Firefox, or Safari.');
+  const chunks=await Promise.all(files.map(async file=>{const response=await fetch(new URL(file,base),{cache:'no-cache'});if(!response.ok)throw new Error('A prototype file could not be loaded.');const value=(await response.text()).trim();done++;document.getElementById('progress').style.width=(done/files.length*80)+'%';return value;}));
+  // Correct a duplicated nine-character segment introduced during transfer.
+  // The complete uncompressed application is verified against its source hash below.
+  chunks[1]=chunks[1].replace('GLUfJsiL9GLUfJsiL9GLx','GLUfJsiL9GLx');
+  const binary=atob(chunks.join(''));const bytes=Uint8Array.from(binary,c=>c.charCodeAt(0));
+  document.getElementById('status').textContent='Preparing your workspace…';
+  const buffer=await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).arrayBuffer();
+  if(buffer.byteLength!==181191)throw new Error('The prototype did not load completely.');
+  if(crypto.subtle){const hash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',buffer)),b=>b.toString(16).padStart(2,'0')).join('');if(hash!==expected)throw new Error('The prototype could not be verified.');}
+  document.getElementById('progress').style.width='100%';
+  const html=new TextDecoder().decode(buffer);document.open();document.write(html);document.close();
+ }catch(error){document.getElementById('title').textContent='Couldn’t open the prototype';document.getElementById('description').textContent=error.message||'A connection problem interrupted loading.';document.getElementById('track').hidden=true;document.getElementById('status').hidden=true;document.getElementById('retry').hidden=false;console.error(error);}
+})();
+</script>
+</body></html>
