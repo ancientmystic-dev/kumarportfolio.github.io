@@ -73,6 +73,35 @@
 @media(max-width:1000px){.registerGroupControls{gap:6px}.registerGroupToggle{gap:7px}.registerGroupHead{padding-right:5px}.registerGroupCustom{display:none}}
 @media(max-width:530px){.registerGroupHead{flex-wrap:wrap;padding:0 9px 9px}.registerGroupToggle{flex-basis:100%;padding-bottom:5px}.registerGroupControls{width:100%;padding-left:36px;justify-content:space-between}.registerActionLabel{padding-left:25px}}
 
+
+/* Reports-style inline permission groups: bulk selection in the header, details below */
+.permissionGroupList{display:grid;gap:10px;padding-top:4px}
+.permissionGroupCard{border:1px solid #e4e5ef;border-radius:10px;background:#fff;overflow:hidden;transition:border-color .18s,box-shadow .18s}
+.permissionGroupCard:hover{border-color:#d9e1f5}
+.permissionGroupCard.expanded{border-color:#cddbf7;box-shadow:0 3px 13px rgba(35,88,215,.045)}
+.permissionGroupCard .reportCard{margin:0;border:none;border-radius:0;min-height:67px;padding:13px 14px;gap:13px}
+.permissionGroupCard .reportCard:hover{background:#fbfcff}
+.permissionGroupCard .reportCard:focus-within{background:#fbfcff}
+.permissionGroupCard .reportInfo{min-width:0}
+.permissionGroupCard .reportInfo strong{display:block;font-size:12px;font-weight:740;color:#34324e}
+.permissionGroupCard .reportInfo small{max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.permissionGroupCard .reportCount{font-weight:600;color:#77748d;font-variant-numeric:tabular-nums}
+.permissionGroupCard .customLink{padding:7px 3px;min-width:64px;text-align:right}
+.permissionGroupCard .customLink[aria-expanded="true"]{color:#4e62a0}
+.permissionGroupCard .groupState{background:#fff8ec;border:1px solid #eedbb9;color:#996414;font-weight:700;font-size:10px;border-radius:20px;padding:4px 8px;flex:none}
+.permissionGroupCard .inlineOptions{border-top:1px solid #e9eaf2;background:#fff;padding:4px 0}
+.permissionGroupCard .inlineOption{display:flex;align-items:center;gap:13px;margin:0;min-height:44px;padding:11px 19px 11px 27px;border-bottom:1px solid #f0f0f5;color:#46435e;font-size:12px;font-weight:540;cursor:pointer}
+.permissionGroupCard .inlineOption:last-child{border-bottom:0}
+.permissionGroupCard .inlineOption:hover{background:#f8faff}
+.permissionGroupCard .inlineOption .check{flex:none}
+.permissionGroupCard .inlineOption:has(input:focus-visible){background:#f3f7ff}
+.permissionGroupCard .inlineOption small{color:#918da3;font-size:11px;display:block;font-weight:400;margin-top:4px}
+.permissionGroupHelp{font-size:11px;color:var(--muted);margin:5px 2px 10px}
+.permissionGroupCard .check:indeterminate{background:#2b5dd9;border-color:#2b5dd9}
+.permissionGroupCard .check:indeterminate:after{content:"";width:9px;height:2px;background:#fff}
+@media(max-width:900px){.permissionGroupCard .reportCard{flex-wrap:wrap}.permissionGroupCard .reportInfo{flex-basis:calc(100% - 50px)}.permissionGroupCard .reportCount{margin-left:27px}.permissionGroupCard .customLink{margin-left:auto}}
+@media(max-width:550px){.permissionGroupCard .reportCard{padding:12px 10px;gap:10px}.permissionGroupCard .inlineOption{padding-left:14px}.permissionGroupCard .reportCount{margin-left:24px}.permissionGroupCard .groupState{display:none}}
+
 </style>
 </head>
 <body><div id="app"></div>
@@ -89,9 +118,10 @@ const allReportNames=REPORT_GROUPS.flatMap(g=>g.reports);if(LEGACY_MAP.length!==
 ROLES.manager.reports=[...allReportNames.filter(r=>r!=='Expense report')];
 let selected='manager',role,baseline,category='products',search='',enabledOnly=false,view='editor',modal='',modalData=null,toastTimer=null;
 const registerExpanded=new Set();
+const reportExpanded=new Set();
 
 function clone(o){return JSON.parse(JSON.stringify(o));}
-function loadRole(id){selected=id;role=clone(ROLES[id]);baseline=clone(role);category='products';search='';enabledOnly=false;view='editor';modal='';registerExpanded.clear();render();}
+function loadRole(id){selected=id;role=clone(ROLES[id]);baseline=clone(role);category='products';search='';enabledOnly=false;view='editor';modal='';registerExpanded.clear();reportExpanded.clear();render();}
 function perm(k){return role.perms[k]||'none';}
 function act(k){return !!role.actions[k];}
 function diff(){const a=JSON.stringify(role),b=JSON.stringify(baseline);if(a===b)return 0;let n=0;for(const k of new Set([...Object.keys(role.perms),...Object.keys(baseline.perms)]))if(perm(k)!==(baseline.perms[k]||'none'))n++;for(const k of new Set([...Object.keys(role.actions),...Object.keys(baseline.actions)]))if(!!role.actions[k]!==!!baseline.actions[k])n++;for(const k of ['bo','pos','yard'])if(role.apps[k]!==baseline.apps[k])n++;if(role.name!==baseline.name)n++;if(role.description!==baseline.description)n++;for(const k of ['product','order'])if(role.thresholds[k]!==baseline.thresholds[k])n++;n+=new Set([...role.reports,...baseline.reports]).size - role.reports.filter(x=>baseline.reports.includes(x)).length;return n;}
@@ -135,42 +165,56 @@ function actionSectionHeader(g,actions){return `<div class="miniSection">${g.id=
 function actionRowsMarkup(actions){let last='';return actions.map(a=>{let heading=a[3]||'';let out=heading!==last?`<div class="actionSubhead">${escapeHTML(heading)}</div>`:'';last=heading;return out+actionMarkup(a);}).join('');}
 
 function toolbar(){return `<div class="toolRow"><label class="searchWrap">${I('search')}<input id="globalSearch" aria-label="Search permissions" placeholder="Search all permissions..." value="${escapeHTML(search)}" oninput="proto.setSearch(this.value)" /></label><button class="filterButton ${enabledOnly?'on':''}" onclick="proto.enabledOnly()">${I('filter','sm')} Enabled only</button></div>`;}
-function contentHeader(g){return `<div class="contentTop"><div class="topline"><div><h2>${search?'Search results':g.name}</h2><p class="subtitle">${search?'Matching permissions across all categories':(g.desc||'')}</p></div><button class="linkAction" onclick="proto.open('coverage')">${I('check','sm')} 135/135 accounted for</button></div>${!search?`<div class="scopeNote">${I('info')}<span>${g.type==='reports'?'Report access can be granted to an entire category or customized report by report.':g.id==='register'?'Register actions are individual Allow/Block permissions. Expand a group to customize or select all within the group.':g.id==='sales'?'Shared sales permissions work across enabled apps. Register-only actions are configurable separately.':'Permissions apply in every enabled app that supports the action. Manage always includes View.'}</span></div>`:''}${toolbar()}</div>`;}
+function contentHeader(g){return `<div class="contentTop"><div class="topline"><div><h2>${search?'Search results':g.name}</h2><p class="subtitle">${search?'Matching permissions across all categories':(g.desc||'')}</p></div><button class="linkAction" onclick="proto.open('coverage')">${I('check','sm')} 135/135 accounted for</button></div>${!search?`<div class="scopeNote">${I('info')}<span>${g.type==='reports'?'Select a report category or Customize it inline, without opening a separate window.':g.id==='register'?'Register actions are individual Allow/Block permissions. Use the group checkbox to select all, or Customize to reveal individual actions below.':g.id==='sales'?'Shared sales permissions work across enabled apps. Register-only actions are configurable separately.':'Permissions apply in every enabled app that supports the action. Manage always includes View.'}</span></div>`:''}${toolbar()}</div>`;}
 function contentBody(g){if(search)return searchResults();if(g.type==='reports')return reportsContent();if(g.id==='register')return registerContent(g);let rows=(g.rows||[]).filter(r=>!enabledOnly||perm(r[0])!=='none');let actions=(g.actions||[]).filter(a=>!enabledOnly||act(a[0]));if(!rows.length&&!actions.length)return `${(g.rows||[]).length?bulkRow(g):''}${(g.actions||[]).length?bulkRow(g,'actions'):''}${empty('No enabled permissions','Turn off “Enabled only” to see individual permissions.')}`;return `${(g.rows||[]).length?bulkRow(g):''}${rows.length?tableHeader()+rows.map(rowMarkup).join(''):''}${(g.actions||[]).length?actionSectionHeader(g,actions)+actions.map(actionMarkup).join(''):''}`;}
 
 const REGISTER_GROUP_ORDER=['Discounts & prices','Refunds & clearing orders','Cash drawer & till','Bypasses','Open tickets','Register settings','Other register actions'];
 function toggleRegisterGroup(group){registerExpanded.has(group)?registerExpanded.delete(group):registerExpanded.add(group);render();}
+function toggleReportInline(id){reportExpanded.has(id)?reportExpanded.delete(id):reportExpanded.add(id);render();}
 function setRegisterGroup(group,allow){const g=GROUPS.find(g=>g.id==='register');for(const a of g.actions.filter(a=>a[3]===group))role.actions[a[0]]=allow;render();}
-function registerContent(g){
- const cards=REGISTER_GROUP_ORDER.map(name=>{
-  const all=g.actions.filter(a=>a[3]===name);
-  const on=all.filter(a=>act(a[0])).length;
-  if(enabledOnly&&on===0)return '';
-  const visible=enabledOnly?all.filter(a=>act(a[0])):all;
-  const full=on===all.length,partial=on>0&&!full,open=registerExpanded.has(name);
-  const title=name==='Other register actions'?'Other':name;
-  const preview=all.map(a=>a[1]).join(', ');
-  return `<section class="registerGroup ${open?'open':''}">
-   <div class="registerGroupHead">
-    <button class="registerGroupToggle" type="button" aria-expanded="${open}" aria-controls="register-list-${REGISTER_GROUP_ORDER.indexOf(name)}" onclick="proto.toggleRegisterGroup('${name}')">
-     <span class="registerChevron">${I('chev','sm')}</span>
-     <span class="registerGroupCopy"><span class="registerGroupTitle">${escapeHTML(title)}</span><span class="registerGroupDescription" title="${escapeHTML(preview)}">${escapeHTML(preview)}</span></span>
-    </button>
-    <div class="registerGroupControls"><span class="registerGroupCount">${on} of ${all.length} on</span>${partial?'<span class="registerGroupCustom">Custom</span>':''}<button class="registerGroupBulk" type="button" aria-label="${full?'Clear all':'Select all'} ${escapeHTML(title)} permissions" onclick="proto.setRegisterGroup('${name}',${!full})">${full?'Clear all':'Select all'}</button></div>
+function registerGroupCard(name,g){
+ const all=g.actions.filter(a=>a[3]===name);
+ const on=all.filter(a=>act(a[0])).length;
+ if(enabledOnly&&on===0)return '';
+ const visible=enabledOnly?all.filter(a=>act(a[0])):all;
+ const expanded=registerExpanded.has(name),full=on===all.length,mixed=on>0&&!full;
+ const title=name==='Other register actions'?'Other':name;
+ const groupIndex=REGISTER_GROUP_ORDER.indexOf(name);
+ const preview=all.slice(0,3).map(a=>a[1]).join(' · ')+(all.length>3?'…':'');
+ return `<section class="permissionGroupCard ${expanded?'expanded':''}" aria-label="${escapeHTML(title)} permissions">
+   <div class="reportCard">
+    <input type="checkbox" class="check" data-register="${groupIndex}" aria-label="Select all ${escapeHTML(title)} actions" ${full?'checked':''} onchange="proto.setRegisterGroup('${name}',this.checked)" />
+    <div class="reportInfo"><strong>${escapeHTML(title)}</strong><small title="${escapeHTML(all.map(a=>a[1]).join(', '))}">${escapeHTML(preview)}</small></div>
+    <span class="reportCount">${on}/${all.length} selected</span>
+    <button class="customLink" type="button" aria-expanded="${expanded}" aria-controls="register-custom-${groupIndex}" onclick="proto.toggleRegisterGroup('${name}')">${expanded?'Done':'Customize'}</button>
    </div>
-   ${open?`<div class="registerGroupBody" id="register-list-${REGISTER_GROUP_ORDER.indexOf(name)}">${visible.map(a=>`<label class="registerActionLabel"><input type="checkbox" class="check" aria-label="${escapeHTML(a[1])}" ${act(a[0])?'checked':''} onchange="proto.applyAction('${a[0]}',this.checked)" /><span>${escapeHTML(a[1])}</span></label>`).join('')}</div>`:''}
-  </section>`;
- }).filter(Boolean).join('');
- return `${bulkRow(g,'actions')}<div class="registerGroups">${cards||empty('No enabled register actions','Turn off “Enabled only” to see all groups.')}</div>`;
+   ${expanded?`<div class="inlineOptions" id="register-custom-${groupIndex}">${visible.map(a=>`<label class="inlineOption"><input type="checkbox" class="check" aria-label="${escapeHTML(a[1])}" ${act(a[0])?'checked':''} onchange="proto.applyAction('${a[0]}',this.checked)"/><span>${escapeHTML(a[1])}</span></label>`).join('')}</div>`:''}
+ </section>`;
 }
-
-function reportsContent(){let total=role.reports.length;let groups=REPORT_GROUPS.filter(g=>!enabledOnly||g.reports.some(x=>role.reports.includes(x)));return `${allReportsRow()}<div class="inlineReportHint">Use the checkbox on each report category to grant or remove access to every report in that group.</div>${groups.map(g=>{let n=g.reports.filter(r=>role.reports.includes(r)).length;return `<div class="reportCard"><input type="checkbox" class="check" aria-label="Access to ${g.name}" ${n===g.reports.length?'checked':''} data-report="${g.id}" onclick="proto.toggleReportGroup('${g.id}',this.checked)"/><div class="reportInfo"><strong>${g.name}</strong><small>${g.reports.slice(0,3).join(' · ')}...</small></div><span class="reportCount">${n}/${g.reports.length} selected</span><button class="customLink" onclick="proto.open('report','${g.id}')">Customize</button></div>`}).join('')||empty('No enabled reports','Turn off “Enabled only” to see report groups.')}`;}
+function registerContent(g){
+ const cards=REGISTER_GROUP_ORDER.map(name=>registerGroupCard(name,g)).filter(Boolean).join('');
+ return `${bulkRow(g,'actions')}<div class="permissionGroupHelp">Select a group to allow all its actions, or choose Customize to select individual actions.</div><div class="permissionGroupList">${cards||empty('No enabled register actions','Turn off “Enabled only” to see all groups.')}</div>`;
+}
+function reportGroupCard(g){
+ const n=g.reports.filter(r=>role.reports.includes(r)).length;
+ const expanded=reportExpanded.has(g.id);
+ const preview=g.reports.slice(0,3).join(' · ')+(g.reports.length>3?'…':'');
+ return `<section class="permissionGroupCard ${expanded?'expanded':''}" aria-label="${escapeHTML(g.name)} reports">
+  <div class="reportCard">
+   <input type="checkbox" class="check" aria-label="Select all ${escapeHTML(g.name)} reports" ${n===g.reports.length?'checked':''} data-report="${g.id}" onchange="proto.toggleReportGroup('${g.id}',this.checked)"/>
+   <div class="reportInfo"><strong>${escapeHTML(g.name)}</strong><small title="${escapeHTML(g.reports.join(', '))}">${escapeHTML(preview)}</small></div>
+   <span class="reportCount">${n}/${g.reports.length} selected</span>
+   <button class="customLink" type="button" aria-expanded="${expanded}" aria-controls="report-custom-${g.id}" onclick="proto.toggleReportInline('${g.id}')">${expanded?'Done':'Customize'}</button>
+  </div>
+  ${expanded?`<div class="inlineOptions" id="report-custom-${g.id}">${g.reports.filter(r=>!enabledOnly||role.reports.includes(r)).map(r=>`<label class="inlineOption"><input type="checkbox" class="check" aria-label="${escapeHTML(r)}" ${role.reports.includes(r)?'checked':''} onchange="proto.toggleReport('${r.replace(/'/g,"\\'")}',this.checked)"/><span>${escapeHTML(r)}</span></label>`).join('')}</div>`:''}
+ </section>`;
+}
+function reportsContent(){const groups=REPORT_GROUPS.filter(g=>!enabledOnly||g.reports.some(x=>role.reports.includes(x)));return `${allReportsRow()}<div class="permissionGroupHelp">Select a category to allow all its reports, or choose Customize to select individual reports.</div><div class="permissionGroupList">${groups.map(reportGroupCard).join('')||empty('No enabled reports','Turn off “Enabled only” to see report groups.')}</div>`;}
 function empty(title,body){return `<div class="empty">${I('search')}<strong>${title}</strong><span>${body}</span></div>`;}
-function searchResults(){const q=search.toLowerCase().trim();let out='';let n=0;GROUPS.forEach(g=>{if(g.type==='reports'){const hits=REPORT_GROUPS.filter(x=>x.name.toLowerCase().includes(q)||x.reports.some(r=>r.toLowerCase().includes(q)));if(hits.length){out+=`<div class="resultCategory">Reports</div>`+hits.map(r=>{const c=r.reports.filter(x=>role.reports.includes(x)).length;return `<div class="reportCard"><div class="reportInfo"><strong>${r.name}</strong><small>${r.reports.length} reports</small></div><span class="reportCount">${c}/${r.reports.length}</span><button class="customLink" onclick="proto.open('report','${r.id}')">Customize</button></div>`;}).join('');n+=hits.length;}return;}let rows=(g.rows||[]).filter(r=>(r[1]+' '+r[2]+' '+g.name).toLowerCase().includes(q)&&(!enabledOnly||perm(r[0])!=='none'));let actions=(g.actions||[]).filter(a=>(a[1]+' '+a[2]+' '+g.name).toLowerCase().includes(q)&&(!enabledOnly||act(a[0])));if(rows.length||actions.length){out+=`<div class="resultCategory">${g.name}</div>`+(rows.length?tableHeader()+rows.map(rowMarkup).join(''):'')+actions.map(actionMarkup).join('');n+=rows.length+actions.length;}});return n?out:empty('No matching permissions','Try a different search term.');}
+function searchResults(){const q=search.toLowerCase().trim();let out='';let n=0;GROUPS.forEach(g=>{if(g.type==='reports'){const hits=REPORT_GROUPS.filter(x=>x.name.toLowerCase().includes(q)||x.reports.some(r=>r.toLowerCase().includes(q)));if(hits.length){out+=`<div class="resultCategory">Reports</div>`+hits.map(reportGroupCard).join('');n+=hits.length;}return;}let rows=(g.rows||[]).filter(r=>(r[1]+' '+r[2]+' '+g.name).toLowerCase().includes(q)&&(!enabledOnly||perm(r[0])!=='none'));let actions=(g.actions||[]).filter(a=>(a[1]+' '+a[2]+' '+g.name).toLowerCase().includes(q)&&(!enabledOnly||act(a[0])));if(rows.length||actions.length){out+=`<div class="resultCategory">${g.name}</div>`+(rows.length?tableHeader()+rows.map(rowMarkup).join(''):'')+actions.map(actionMarkup).join('');n+=rows.length+actions.length;}});return n?out:empty('No matching permissions','Try a different search term.');}
 function permissionPanel(){let g=GROUPS.find(g=>g.id===category)||GROUPS[0];return `<section class="card permissionPanel">${categories()}<div class="content">${contentHeader(g)}<div class="contentBody">${contentBody(g)}</div><div class="footer"><span>${I('info')} Changes to this role affect <strong>${role.assigned} assigned employees</strong>.</span><button class="linkAction" onclick="proto.open('impact')">Preview access ${I('chev','sm')}</button></div></div></section>`;}
 function listPage(){return `<div class="page"><div class="pageHead"><div><div class="crumb">Employees ${I('chev','sm')} Roles</div><h1>Roles</h1><p class="subtitle">Manage permissions for your store team.</p></div><div class="headActions"><span class="previewTag">Interactive prototype</span><button class="btn primary" onclick="proto.newRole()">${I('plus')} Create role</button></div></div><div class="card roleList"><table class="roleTable"><thead><tr><th>Role</th><th>Employees</th><th>App access</th><th></th></tr></thead><tbody>${Object.entries(ROLES).map(([k,v])=>`<tr><td><strong>${escapeHTML(v.name)}</strong><div style="color:#918ca3;margin-top:5px">${escapeHTML(v.description)}</div></td><td>${v.assigned}</td><td>${Object.values(v.apps).filter(Boolean).length} apps</td><td style="text-align:right"><button class="btn small" onclick="proto.loadRole('${k}')">Edit role ${I('chev','sm')}</button></td></tr>`).join('')}</tbody></table></div></div>`;}
 function modalHTML(){if(!modal)return '';let title='',description='',body='',actions='';if(modal==='details'){title='Edit role details';description='Update the name and description of this role.';body=`<div class="field"><label for="roleName">Display name <span style="color:#c74355">*</span></label><input id="roleName" value="${escapeHTML(role.name)}" maxlength="70" /></div><div class="field"><label for="roleDesc">Description</label><textarea id="roleDesc" maxlength="250">${escapeHTML(role.description)}</textarea></div>`;actions=`<button class="btn" onclick="proto.close()">Cancel</button><button class="btn primary" onclick="proto.saveDetails()">Apply changes</button>`;}
-if(modal==='report'){let g=REPORT_GROUPS.find(g=>g.id===modalData),n=g.reports.filter(x=>role.reports.includes(x)).length;title=g.name;description=`${n} of ${g.reports.length} reports selected. Changes update the role and are saved with Save changes.`;body=`<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px"><strong style="font-size:12px">Individual reports</strong><button class="linkAction" onclick="proto.toggleReportGroup('${g.id}',${n!==g.reports.length});proto.open('report','${g.id}')">${n===g.reports.length?'Clear all':'Select all'}</button></div>`+g.reports.map(r=>`<label class="reportPick"><input type="checkbox" class="check" ${role.reports.includes(r)?'checked':''} onchange="proto.toggleReport('${r.replace(/'/g,"\\'")}',this.checked);proto.open('report','${g.id}')"/><span>${escapeHTML(r)}</span></label>`).join('');actions=`<button class="btn primary" onclick="proto.close()">Done</button>`;}
 if(modal==='impact'){title='Effective access preview';description='App access and shared permissions work together. Turning off an app does not erase its underlying permissions.';const enabled=Object.entries(role.perms).filter(([k,v])=>v!=='none');body=`<div style="font-size:12px;color:var(--muted);margin-bottom:15px">${enabled.length} enabled business permissions · ${Object.values(role.actions).filter(Boolean).length} enabled special actions</div>`+[['bo','Back Office','Configure the catalog, sales, purchasing and team based on shared permissions.'],['pos','POS Register','Use shared catalog and customer permissions alongside checkout-specific actions.'],['yard','OctoYard','Use shared product, inventory and purchasing permissions in supported handheld workflows.']].map(([k,name,d])=>`<div class="impactApp"><div class="hdr"><strong>${name}</strong><span class="${role.apps[k]?'impactOn':'impactOff'}">${role.apps[k]?'Access allowed':'Access blocked'}</span></div><p>${role.apps[k]?d:'All features in this app are inaccessible for this role.'}</p></div>`).join('')+`<div class="scopeNote" style="margin:14px 0 0">${I('info')}<span>Exact capabilities depend on which features each application implements, location restrictions, and any required manager approval.</span></div>`;actions=`<button class="btn primary" onclick="proto.close()">Done</button>`;}
 if(modal==='coverage'){
  title='Permission coverage';description='Every permission shown in the four supplied screenshots is accounted for. Shared entries map to one canonical control; report names and app-only actions remain available.';
@@ -186,10 +230,20 @@ if(modal==='threshold'){
  actions=`<button class="btn" onclick="proto.close()">Cancel</button><button class="btn primary" onclick="proto.saveThreshold('${k}')">Apply threshold</button>`;
 }
 if(modal==='discard'){title='Discard unsaved changes?';description='Your changes to this role have not been saved.';body='<p class="subtitle">If you leave now, your changes to app access and permissions will be lost.</p>';actions=`<button class="btn" onclick="proto.close()">Keep editing</button><button class="btn danger" onclick="proto.discard()">Discard changes</button>`;}
-return `<div class="overlay" role="presentation" onclick="if(event.target===this)proto.close()"><section class="modal ${['report','impact','coverage'].includes(modal)?'wide':''}" role="dialog" aria-modal="true" aria-label="${title}"><div class="modalHead"><div><h2>${title}</h2><p>${description}</p></div><button class="close" aria-label="Close" onclick="proto.close()">${I('x','sm')}</button></div><div class="modalBody">${body}</div><div class="modalFooter">${actions}</div></section></div>`;}
-function render(){document.getElementById('app').innerHTML=sidebar()+`<main class="workspace">${topbar()}<div class="mainScroll">${view==='list'?listPage():`<div class="page">${pageHeader()}${roleCard()}${accessCard()}${permissionPanel()}</div>`}</div></main>`+modalHTML();document.querySelectorAll('input[data-report]').forEach(el=>{let g=REPORT_GROUPS.find(g=>g.id===el.dataset.report);if(g){const n=g.reports.filter(r=>role.reports.includes(r)).length;el.indeterminate=n>0&&n<g.reports.length;}});}
+return `<div class="overlay" role="presentation" onclick="if(event.target===this)proto.close()"><section class="modal ${['impact','coverage'].includes(modal)?'wide':''}" role="dialog" aria-modal="true" aria-label="${title}"><div class="modalHead"><div><h2>${title}</h2><p>${description}</p></div><button class="close" aria-label="Close" onclick="proto.close()">${I('x','sm')}</button></div><div class="modalBody">${body}</div><div class="modalFooter">${actions}</div></section></div>`;}
+let lastRenderedCategory=null,lastRenderedView=null;
+function render(){
+ const prior=document.querySelector('.mainScroll');
+ const priorTop=prior?prior.scrollTop:0;
+ const restore=prior&&category===lastRenderedCategory&&view===lastRenderedView;
+ document.getElementById('app').innerHTML=sidebar()+`<main class="workspace">${topbar()}<div class="mainScroll">${view==='list'?listPage():`<div class="page">${pageHeader()}${roleCard()}${accessCard()}${permissionPanel()}</div>`}</div></main>`+modalHTML();
+ const next=document.querySelector('.mainScroll');if(next&&restore)next.scrollTop=priorTop;
+ lastRenderedCategory=category;lastRenderedView=view;
+ document.querySelectorAll('input[data-report]').forEach(el=>{let g=REPORT_GROUPS.find(g=>g.id===el.dataset.report);if(g){const n=g.reports.filter(r=>role.reports.includes(r)).length;el.indeterminate=n>0&&n<g.reports.length;}});
+ document.querySelectorAll('input[data-register]').forEach(el=>{const name=REGISTER_GROUP_ORDER[Number(el.dataset.register)];const all=GROUPS.find(g=>g.id==='register').actions.filter(a=>a[3]===name);const n=all.filter(a=>act(a[0])).length;el.indeterminate=n>0&&n<all.length;});
+}
 window.proto={
- navToast:n=>toast('Navigation outside Roles is not included in this prototype.'),pickCategory:id=>{category=id;search='';render();},toggleApp,changePerm,applyAction,toggleReportGroup,toggleReport,setAll,setAllReports,save,open:(m,d)=>{modal=m;modalData=d;render();},close:()=>{modal='';modalData=null;render();},saveDetails:()=>{const name=document.getElementById('roleName').value.trim(),description=document.getElementById('roleDesc').value;if(!name){document.getElementById('roleName').focus();return;}role.name=name;role.description=description;modal='';render();},setSearch:q=>{let i=document.activeElement?.selectionStart;search=q;render();const el=document.getElementById('globalSearch');if(el){el.focus();el.setSelectionRange(i,i);}},enabledOnly:()=>{enabledOnly=!enabledOnly;render();},goList:()=>{if(diff())modal='discard';else view='list';render();},cancel:()=>{if(diff())modal='discard';else view='list';render();},discard:()=>{role=clone(baseline);modal='';view='list';render();},setAllActions,loadRole,toggleRegisterGroup,setRegisterGroup, saveThreshold:k=>{const val=Number(document.getElementById('thresholdInput').value);if(!Number.isFinite(val)||val<0||val>100){toast('Enter a threshold between 0 and 100.',false);return;}role.thresholds[k]=val;modal='';render();}, newRole:()=>{toast('Choose a sample role to explore the redesigned editor.');},
+ navToast:n=>toast('Navigation outside Roles is not included in this prototype.'),pickCategory:id=>{category=id;search='';render();},toggleApp,changePerm,applyAction,toggleReportGroup,toggleReport,setAll,setAllReports,save,open:(m,d)=>{modal=m;modalData=d;render();},close:()=>{modal='';modalData=null;render();},saveDetails:()=>{const name=document.getElementById('roleName').value.trim(),description=document.getElementById('roleDesc').value;if(!name){document.getElementById('roleName').focus();return;}role.name=name;role.description=description;modal='';render();},setSearch:q=>{let i=document.activeElement?.selectionStart;search=q;render();const el=document.getElementById('globalSearch');if(el){el.focus();el.setSelectionRange(i,i);}},enabledOnly:()=>{enabledOnly=!enabledOnly;render();},goList:()=>{if(diff())modal='discard';else view='list';render();},cancel:()=>{if(diff())modal='discard';else view='list';render();},discard:()=>{role=clone(baseline);modal='';view='list';render();},setAllActions,loadRole,toggleRegisterGroup,toggleReportInline,setRegisterGroup, saveThreshold:k=>{const val=Number(document.getElementById('thresholdInput').value);if(!Number.isFinite(val)||val<0||val>100){toast('Enter a threshold between 0 and 100.',false);return;}role.thresholds[k]=val;modal='';render();}, newRole:()=>{toast('Choose a sample role to explore the redesigned editor.');},
 };
 loadRole('manager');
 })();
